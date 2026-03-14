@@ -593,7 +593,6 @@
       </div>
     </a>
     <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="#">Research</a></li>
       <li><a href="#">Teams</a></li>
@@ -608,7 +607,6 @@
   <!-- Mobile Menu -->
   <div class="mobile-menu" id="mobileMenu" role="dialog">
     <button class="mobile-close" id="mobileClose" aria-label="Close">×</button>
-    <a href="index.html" class="mobile-link">Home</a>
     <a href="about.html" class="mobile-link">About</a>
     <a href="#" class="mobile-link">Research</a>
     <a href="#" class="mobile-link">Teams</a>
@@ -712,8 +710,8 @@
               <h3>Email Us Directly</h3>
               <p>For general inquiries, reach out via email. We aim to respond within two to three business days.</p>
               <!-- ✏️ EDIT: Replace with real WYC email address -->
-              <a href="mailto:contact@worldyouthcouncil.org" class="card-link">
-                contact@worldyouthcouncil.org
+              <a href="/cdn-cgi/l/email-protection#c7a4a8a9b3a6a4b387b0a8b5aba3bea8b2b3afa4a8b2a9a4aeabe9a8b5a0" class="card-link">
+                <span class="__cf_email__" data-cfemail="d9bab6b7adb8baad99aeb6abb5bda0b6acadb1bab6acb7bab0b5f7b6abbe">[email&#160;protected]</span>
                 <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
               </a>
             </div>
@@ -739,8 +737,8 @@
               <h3>Media &amp; Press</h3>
               <p>Journalists and media professionals can reach our press contact for statements, interviews, and research inquiries.</p>
               <!-- ✏️ EDIT: Replace with real press email address -->
-              <a href="mailto:press@worldyouthcouncil.org" class="card-link">
-                press@worldyouthcouncil.org
+              <a href="/cdn-cgi/l/email-protection#2a5a584f59596a5d4558464e53455f5e4249455f444943460445584d" class="card-link">
+                <span class="__cf_email__" data-cfemail="f08082958383b0879f829c94899f858498939f859e93999cde9f8297">[email&#160;protected]</span>
                 <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
               </a>
             </div>
@@ -831,7 +829,7 @@
   </footer>
 
   <!-- ── JS ─────────────────────────────────────────────────────── -->
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     // Scroll reveal
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
@@ -884,19 +882,4 @@
           field.addEventListener('input', () => { field.style.borderColor = ''; }, { once: true });
         }
       });
-      if (!valid) return;
-
-      // Simulate async submission (replace with real fetch / FormSubmit / EmailJS, etc.)
-      submitBtn.textContent = 'Sending…';
-      submitBtn.disabled = true;
-
-      setTimeout(() => {
-        form.style.display = 'none';
-        successBox.classList.add('visible');
-        successBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      }, 900);
-    });
-  </script>
-
-</body>
-</html>
+      if (!valid)
