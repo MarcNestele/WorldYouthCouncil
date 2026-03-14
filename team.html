@@ -457,8 +457,8 @@
         <div class="footer-col">
           <div class="footer-col-title">Get Involved</div>
           <ul>
-            <li><a href="apply.html">Join the Network</a></li>
-            <li><a href="apply.html">Become Ambassador</a></li>
+            <li><a href="application.html">Join the Network</a></li>
+            <li><a href="application.html">Become Ambassador</a></li>
             <li><a href="team.html">Research Teams</a></li>
             <li><a href="#">Submit Research</a></li>
             <li><a href="contact.html">Contact</a></li>
@@ -599,9 +599,9 @@
     document.getElementById('panelCountry').textContent  = team.country;
     const hasAmbassador = !team.ambassador.includes('<!--');
     document.getElementById('panelAmbassador').innerHTML = '<strong>Ambassador:</strong> ' + (hasAmbassador ? team.ambassador : 'Position open');
-    let actions = `<a href="apply.html" class="panel-btn panel-btn-primary">Apply as Researcher ↗</a>`;
+    let actions = `<a href="application.html" class="panel-btn panel-btn-primary">Apply as Researcher ↗</a>`;
     if (!hasAmbassador) {
-      actions += `<a href="apply.html" class="panel-btn panel-btn-outline">Apply as Ambassador ↗</a>`;
+      actions += `<a href="application.html" class="panel-btn panel-btn-outline">Apply as Ambassador ↗</a>`;
     }
     document.getElementById('panelActions').innerHTML = actions;
     panel.classList.add('visible');
