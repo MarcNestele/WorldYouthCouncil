@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
 
+
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -104,15 +105,15 @@
     .team-hero h1 { font-family: var(--serif); font-size: clamp(2.75rem, 6vw, 5rem); line-height: 1.08; max-width: 16ch; margin-bottom: 1.75rem; }
     .team-hero p { font-size: clamp(1rem, 2vw, 1.175rem); font-weight: 300; line-height: 1.75; max-width: 54ch; opacity: .8; }
 
-    /* ── Stats ── */
+    /* ── Under-development notice ── */
     .stats-strip { background: var(--white); border-bottom: 1px solid var(--border); }
-    .stats-inner { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); display: grid; grid-template-columns: repeat(4, 1fr); }
-    .stat-block { padding: 2.5rem 2rem; border-right: 1px solid var(--border); }
-    .stat-block:last-child { border-right: none; }
-    .stat-num { font-family: var(--serif); font-size: clamp(2rem, 3.5vw, 3rem); color: var(--blue); line-height: 1; display: block; margin-bottom: .4rem; }
-    .stat-label { font-size: .75rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
-    @media (max-width: 768px) { .stats-inner { grid-template-columns: 1fr 1fr; } .stat-block:nth-child(2) { border-right: none; } .stat-block:nth-child(1), .stat-block:nth-child(2) { border-bottom: 1px solid var(--border); } }
-    @media (max-width: 420px) { .stats-inner { grid-template-columns: 1fr; } .stat-block { border-right: none; border-bottom: 1px solid var(--border); } .stat-block:last-child { border-bottom: none; } }
+    .dev-notice-inner { max-width: var(--max); margin: 0 auto; padding: 2.5rem var(--pad); display: flex; align-items: center; gap: 1.5rem; }
+    .dev-notice-icon { width: 44px; height: 44px; background: rgba(251,191,36,.1); border: 1px solid rgba(251,191,36,.3); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .dev-notice-icon svg { width: 20px; height: 20px; stroke: #B45309; fill: none; stroke-width: 1.8; }
+    .dev-notice-text { }
+    .dev-notice-text strong { display: block; font-size: .8rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--blue); margin-bottom: .25rem; }
+    .dev-notice-text p { font-size: .88rem; color: var(--muted); line-height: 1.6; }
+    @media (max-width: 600px) { .dev-notice-inner { flex-direction: column; align-items: flex-start; gap: 1rem; } }
 
     /* ── Map Section ── */
     .map-section { background: var(--navy); padding: clamp(4rem, 8vw, 6rem) clamp(1.25rem, 5vw, 3rem); }
@@ -158,9 +159,10 @@
     /* Team panel (tooltip) */
     .team-panel {
       position: absolute; top: 1.25rem; left: 1.25rem;
-      background: rgba(11,42,74,.95); backdrop-filter: blur(12px);
+      background: rgba(11,42,74,.97); backdrop-filter: blur(12px);
       border: 1px solid rgba(59,130,246,.25); border-radius: 12px;
-      padding: 1.35rem 1.5rem; width: 260px;
+      padding: 1.35rem 1.5rem; width: 270px;
+      color: white;
       opacity: 0; pointer-events: none;
       transition: opacity .25s ease, transform .25s ease;
       transform: translateY(6px);
@@ -168,12 +170,18 @@
     .team-panel.visible { opacity: 1; pointer-events: all; transform: translateY(0); }
     .panel-close { position: absolute; top: .75rem; right: .75rem; background: none; border: none; color: rgba(255,255,255,.4); cursor: pointer; font-size: 1rem; line-height: 1; padding: .25rem; transition: color .2s; }
     .panel-close:hover { color: white; }
-    .panel-region { font-size: .65rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); margin-bottom: .4rem; }
-    .panel-country { font-family: var(--serif); font-size: 1.2rem; color: white; margin-bottom: .35rem; }
+    .panel-region { font-size: .65rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #60a5fa; margin-bottom: .75rem; }
+    .panel-flag-large { display: block; margin-bottom: .75rem; }
+    .panel-flag-large svg { width: 56px; height: 36px; border-radius: 5px; display: block; box-shadow: 0 2px 8px rgba(0,0,0,.4); }
+    .panel-country { font-family: var(--serif); font-size: 1.2rem; color: #ffffff; margin-bottom: .35rem; }
     .panel-ambassador { font-size: .78rem; color: rgba(255,255,255,.55); margin-bottom: .9rem; }
-    .panel-ambassador strong { color: rgba(255,255,255,.8); }
-    .panel-tags { display: flex; flex-wrap: wrap; gap: .4rem; }
-    .panel-tag { font-size: .65rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; padding: .25rem .65rem; border-radius: 100px; border: 1px solid rgba(59,130,246,.3); color: rgba(59,130,246,.9); }
+    .panel-ambassador strong { color: rgba(255,255,255,.85); }
+    .panel-actions { display: flex; flex-direction: column; gap: .5rem; }
+    .panel-btn { display: block; text-align: center; font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: .6rem 1rem; border-radius: 6px; text-decoration: none; transition: background .2s, border-color .2s, color .2s; }
+    .panel-btn-primary { background: var(--accent); color: #ffffff; }
+    .panel-btn-primary:hover { background: #2563eb; }
+    .panel-btn-outline { background: transparent; border: 1.5px solid rgba(96,165,250,.45); color: #93c5fd; }
+    .panel-btn-outline:hover { border-color: var(--accent); color: white; }
 
     @media (max-width: 580px) {
       .team-panel { width: calc(100% - 2.5rem); left: 1.25rem; right: 1.25rem; }
@@ -209,7 +217,8 @@
     .team-card[data-status="coming"]::before { background: #FBBF24; }
 
     .card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: 1.25rem; }
-    .card-flag { font-size: 1.75rem; line-height: 1; flex-shrink: 0; }
+    .card-flag { flex-shrink: 0; }
+    .card-flag svg { width: 44px; height: 28px; border-radius: 4px; display: block; box-shadow: 0 1px 5px rgba(0,0,0,.2); }
     .card-status { font-size: .62rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; padding: .25rem .7rem; border-radius: 100px; flex-shrink: 0; }
     .card-status.active { background: rgba(59,130,246,.1); color: var(--accent); border: 1px solid rgba(59,130,246,.25); }
     .card-status.coming { background: rgba(251,191,36,.12); color: #B45309; border: 1px solid rgba(251,191,36,.4); }
@@ -321,24 +330,15 @@
       </div>
     </section>
 
-    <!-- Stats -->
+    <!-- Under Development Notice -->
     <div class="stats-strip">
-      <div class="stats-inner">
-        <div class="stat-block reveal">
-          <span class="stat-num">18</span>
-          <span class="stat-label">Active Teams</span>
+      <div class="dev-notice-inner reveal">
+        <div class="dev-notice-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
         </div>
-        <div class="stat-block reveal reveal-delay-1">
-          <span class="stat-num">6</span>
-          <span class="stat-label">Regions</span>
-        </div>
-        <div class="stat-block reveal reveal-delay-2">
-          <span class="stat-num">120+</span>
-          <span class="stat-label">Researchers</span>
-        </div>
-        <div class="stat-block reveal reveal-delay-3">
-          <span class="stat-num">2026</span>
-          <span class="stat-label">Founded</span>
+        <div class="dev-notice-text">
+          <strong>Teams under development</strong>
+          <p>Our national research teams are currently being established. We are actively recruiting founding ambassadors and researchers across all regions. The first wave of teams is launching in 2026.</p>
         </div>
       </div>
     </div>
@@ -351,7 +351,7 @@
             <p class="map-eyebrow">Interactive Map</p>
             <h2>Our teams,<br>mapped globally.</h2>
           </div>
-          <p>Click any marker on the map to explore the national research team for that country — including their ambassador, research focus areas, and current status. Drag to pan, scroll to zoom.</p>
+          <p>Click any marker to explore a national research team launching soon — including its region, ambassador status, and how to get involved. Drag to pan, scroll to zoom.</p>
         </div>
 
         <div class="map-wrap reveal reveal-delay-1">
@@ -361,9 +361,10 @@
           <div class="team-panel" id="teamPanel">
             <button class="panel-close" id="panelClose">✕</button>
             <div class="panel-region" id="panelRegion"></div>
+            <span class="panel-flag-large" id="panelFlag"></span>
             <div class="panel-country" id="panelCountry"></div>
             <div class="panel-ambassador" id="panelAmbassador"></div>
-            <div class="panel-tags" id="panelTags"></div>
+            <div class="panel-actions" id="panelActions"></div>
           </div>
 
           <!-- Controls -->
@@ -375,7 +376,6 @@
 
           <!-- Legend -->
           <div class="map-legend">
-            <div class="legend-item"><span class="legend-dot active"></span>Active Team</div>
             <div class="legend-item"><span class="legend-dot coming"></span>Launching Soon</div>
           </div>
         </div>
@@ -388,15 +388,15 @@
         <div class="teams-header reveal">
           <p class="section-label">All Teams</p>
           <h2>Browse by region.</h2>
-          <p>Filter the national research teams by geographic region, or view all teams at once.</p>
+          <p>Our founding national research teams — currently being established across five regions. Filter by area or view all at once.</p>
         </div>
 
         <div class="filter-bar reveal reveal-delay-1">
           <button class="filter-btn active" data-filter="all">All Regions</button>
           <button class="filter-btn" data-filter="Europe">Europe</button>
+          <button class="filter-btn" data-filter="Americas">Americas</button>
           <button class="filter-btn" data-filter="Africa">Africa</button>
           <button class="filter-btn" data-filter="Asia-Pacific">Asia-Pacific</button>
-          <button class="filter-btn" data-filter="Americas">Americas</button>
           <button class="filter-btn" data-filter="MENA">MENA</button>
         </div>
 
@@ -482,26 +482,26 @@
 
   <script>
   // ── Team data ──────────────────────────────────────────────────────────────
+  const FLAGS = {
+    de: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5 3"><rect width="5" height="1" fill="#000"/><rect width="5" height="1" y="1" fill="#D00"/><rect width="5" height="1" y="2" fill="#FFCE00"/></svg>`,
+    gb: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30"><rect width="60" height="30" fill="#012169"/><path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" stroke-width="4"/><path d="M30,0 V30 M0,15 H60" stroke="#fff" stroke-width="10"/><path d="M30,0 V30 M0,15 H60" stroke="#C8102E" stroke-width="6"/></svg>`,
+    us: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 10"><rect width="19" height="10" fill="#B22234"/><rect width="19" height=".77" y=".77" fill="#fff"/><rect width="19" height=".77" y="2.31" fill="#fff"/><rect width="19" height=".77" y="3.85" fill="#fff"/><rect width="19" height=".77" y="5.38" fill="#fff"/><rect width="19" height=".77" y="6.92" fill="#fff"/><rect width="19" height=".77" y="8.46" fill="#fff"/><rect width="7.6" height="5.38" fill="#3C3B6E"/></svg>`,
+    br: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 14"><rect width="20" height="14" fill="#009C3B"/><polygon points="10,1 19,7 10,13 1,7" fill="#FFDF00"/><circle cx="10" cy="7" r="3.2" fill="#002776"/><path d="M6.5,5.8 Q10,4.5 13.5,6.2" stroke="#fff" stroke-width=".5" fill="none"/></svg>`,
+    ke: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2"><rect width="3" height=".67" fill="#006600"/><rect width="3" height=".67" y=".67" fill="#BB0000"/><rect width="3" height=".67" y="1.33" fill="#000"/><rect width="3" height=".08" y=".63" fill="#fff"/><rect width="3" height=".08" y="1.29" fill="#fff"/></svg>`,
+    in: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2"><rect width="3" height=".67" fill="#FF9933"/><rect width="3" height=".67" y=".67" fill="#fff"/><rect width="3" height=".67" y="1.33" fill="#138808"/><circle cx="1.5" cy="1" r=".22" fill="none" stroke="#00008B" stroke-width=".05"/></svg>`,
+    id: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2"><rect width="3" height="1" fill="#CE1126"/><rect width="3" height="1" y="1" fill="#fff"/></svg>`,
+    ae: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2"><rect width="3" height=".67" fill="#00732F"/><rect width="3" height=".67" y=".67" fill="#fff"/><rect width="3" height=".67" y="1.33" fill="#000"/><rect width=".75" height="2" fill="#EF3340"/></svg>`,
+  };
+
   const TEAMS = [
-    { country: 'Germany',       flag: '🇩🇪', region: 'Europe',       status: 'active',  lon:  10.45, lat: 51.17, ambassador: '<!-- ✏️ EDIT: Ambassador name -->', topics: ['Climate Policy','Economic Governance'] },
-    { country: 'France',        flag: '🇫🇷', region: 'Europe',       status: 'active',  lon:   2.21, lat: 46.23, ambassador: '<!-- ✏️ EDIT: Ambassador name -->', topics: ['Digital Rights','Global Governance'] },
-    { country: 'Poland',        flag: '🇵🇱', region: 'Europe',       status: 'active',  lon:  19.14, lat: 51.92, ambassador: '<!-- ✏️ EDIT: Ambassador name -->', topics: ['Security Policy','Democracy'] },
-    { country: 'Spain',         flag: '🇪🇸', region: 'Europe',       status: 'coming',  lon:  -3.75, lat: 40.46, ambassador: 'Position open',                    topics: ['Social Policy','EU Affairs'] },
-    { country: 'Netherlands',   flag: '🇳🇱', region: 'Europe',       status: 'active',  lon:   5.29, lat: 52.13, ambassador: '<!-- ✏️ EDIT: Ambassador name -->', topics: ['International Law','Trade'] },
-    { country: 'Nigeria',       flag: '🇳🇬', region: 'Africa',       status: 'active',  lon:   8.68, lat:  9.08, ambassador: '<!-- ✏️ EDIT: Ambassador name -->', topics: ['Development','Health Policy'] },
-    { country: 'Kenya',         flag: '🇰🇪', region: 'Africa',       status: 'active',  lon:  37.91, lat: -0.02, ambassador: '<!-- ✏️ EDIT: Ambassador name -->', topics: ['Climate','Food Security'] },
-    { country: 'South Africa',  flag: '🇿🇦', region: 'Africa',       status: 'active',  lon:  25.08, lat:-28.67, ambassador: '<!-- ✏️ EDIT: Ambassador name -->', topics: ['Inequality','Governance'] },
-    { country: 'Ghana',         flag: '🇬🇭', region: 'Africa',       status: 'coming',  lon:  -1.02, lat:  7.95, ambassador: 'Position open',                    topics: ['Democracy','Digital Economy'] },
-    { country: 'India',         flag: '🇮🇳', region: 'Asia-Pacific', status: 'active',  lon:  78.96, lat: 20.59, ambassador: '<!-- ✏️ EDIT: Ambassador name -->', topics: ['Technology','Climate Finance'] },
-    { country: 'Japan',         flag: '🇯🇵', region: 'Asia-Pacific', status: 'active',  lon: 138.25, lat: 36.20, ambassador: '<!-- ✏️ EDIT: Ambassador name -->', topics: ['AI Policy','Security'] },
-    { country: 'South Korea',   flag: '🇰🇷', region: 'Asia-Pacific', status: 'active',  lon: 127.77, lat: 35.91, ambassador: '<!-- ✏️ EDIT: Ambassador name -->', topics: ['Tech Governance','Trade'] },
-    { country: 'Australia',     flag: '🇦🇺', region: 'Asia-Pacific', status: 'coming',  lon: 133.78, lat:-25.27, ambassador: 'Position open',                    topics: ['Pacific Affairs','Climate'] },
-    { country: 'Indonesia',     flag: '🇮🇩', region: 'Asia-Pacific', status: 'active',  lon: 113.92, lat: -0.79, ambassador: '<!-- ✏️ EDIT: Ambassador name -->', topics: ['Maritime Policy','Development'] },
-    { country: 'United States', flag: '🇺🇸', region: 'Americas',    status: 'active',  lon: -95.71, lat: 37.09, ambassador: '<!-- ✏️ EDIT: Ambassador name -->', topics: ['Global Governance','Democracy'] },
-    { country: 'Brazil',        flag: '🇧🇷', region: 'Americas',    status: 'active',  lon: -51.93, lat:-14.24, ambassador: '<!-- ✏️ EDIT: Ambassador name -->', topics: ['Amazon Policy','Inequality'] },
-    { country: 'Colombia',      flag: '🇨🇴', region: 'Americas',    status: 'coming',  lon: -74.30, lat:  4.57, ambassador: 'Position open',                    topics: ['Peace','Environmental Law'] },
-    { country: 'Egypt',         flag: '🇪🇬', region: 'MENA',        status: 'active',  lon:  30.80, lat: 26.82, ambassador: '<!-- ✏️ EDIT: Ambassador name -->', topics: ['Regional Security','Water'] },
-    { country: 'Jordan',        flag: '🇯🇴', region: 'MENA',        status: 'active',  lon:  36.24, lat: 30.59, ambassador: '<!-- ✏️ EDIT: Ambassador name -->', topics: ['Refugees','Human Rights'] },
+    { country: 'Germany',              iso: 'de', region: 'Europe',       status: 'coming', lon:  10.45, lat: 51.17, ambassador: '<!-- ✏️ EDIT: Ambassador name -->' },
+    { country: 'United Kingdom',       iso: 'gb', region: 'Europe',       status: 'coming', lon:  -3.18, lat: 55.38, ambassador: '<!-- ✏️ EDIT: Ambassador name -->' },
+    { country: 'United States',        iso: 'us', region: 'Americas',     status: 'coming', lon: -95.71, lat: 37.09, ambassador: '<!-- ✏️ EDIT: Ambassador name -->' },
+    { country: 'Brazil',               iso: 'br', region: 'Americas',     status: 'coming', lon: -51.93, lat:-14.24, ambassador: '<!-- ✏️ EDIT: Ambassador name -->' },
+    { country: 'Kenya',                iso: 'ke', region: 'Africa',       status: 'coming', lon:  37.91, lat: -0.02, ambassador: '<!-- ✏️ EDIT: Ambassador name -->' },
+    { country: 'India',                iso: 'in', region: 'Asia-Pacific', status: 'coming', lon:  78.96, lat: 20.59, ambassador: '<!-- ✏️ EDIT: Ambassador name -->' },
+    { country: 'Indonesia',            iso: 'id', region: 'Asia-Pacific', status: 'coming', lon: 113.92, lat: -0.79, ambassador: '<!-- ✏️ EDIT: Ambassador name -->' },
+    { country: 'United Arab Emirates', iso: 'ae', region: 'MENA',         status: 'coming', lon:  53.85, lat: 23.42, ambassador: '<!-- ✏️ EDIT: Ambassador name -->' },
   ];
 
   // ── Render team cards ──────────────────────────────────────────────────────
@@ -518,13 +518,12 @@
       card.style.transitionDelay = delay + 's';
       card.innerHTML = `
         <div class="card-top">
-          <span class="card-flag">${t.flag}</span>
-          <span class="card-status ${t.status}">${t.status === 'active' ? 'Active' : 'Coming Soon'}</span>
+          <span class="card-flag">${FLAGS[t.iso]}</span>
+          <span class="card-status coming">Launching Soon</span>
         </div>
         <div class="card-region">${t.region}</div>
         <div class="card-country">${t.country}</div>
-        <div class="card-ambassador"><strong>Ambassador:</strong> ${t.ambassador.includes('<!--') ? '<!-- ✏️ EDIT: Name -->' : t.ambassador}</div>
-        <div class="card-topics">${t.topics.map(tp => `<span class="card-topic">${tp}</span>`).join('')}</div>
+        <div class="card-ambassador"><strong>Ambassador:</strong> ${t.ambassador.includes('<!--') ? 'Position open' : t.ambassador}</div>
       `;
       grid.appendChild(card);
     });
@@ -595,10 +594,16 @@
   panelClose.addEventListener('click', () => panel.classList.remove('visible'));
 
   function showPanel(team) {
-    document.getElementById('panelRegion').textContent    = team.region;
-    document.getElementById('panelCountry').textContent   = team.flag + '  ' + team.country;
-    document.getElementById('panelAmbassador').innerHTML  = '<strong>Ambassador:</strong> ' + (team.ambassador.includes('<!--') ? '(name to be confirmed)' : team.ambassador);
-    document.getElementById('panelTags').innerHTML        = team.topics.map(t => `<span class="panel-tag">${t}</span>`).join('');
+    document.getElementById('panelRegion').textContent   = team.region;
+    document.getElementById('panelFlag').innerHTML = FLAGS[team.iso];
+    document.getElementById('panelCountry').textContent  = team.country;
+    const hasAmbassador = !team.ambassador.includes('<!--');
+    document.getElementById('panelAmbassador').innerHTML = '<strong>Ambassador:</strong> ' + (hasAmbassador ? team.ambassador : 'Position open');
+    let actions = `<a href="apply.html" class="panel-btn panel-btn-primary">Apply as Researcher ↗</a>`;
+    if (!hasAmbassador) {
+      actions += `<a href="apply.html" class="panel-btn panel-btn-outline">Apply as Ambassador ↗</a>`;
+    }
+    document.getElementById('panelActions').innerHTML = actions;
     panel.classList.add('visible');
   }
 
