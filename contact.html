@@ -882,4 +882,19 @@
           field.addEventListener('input', () => { field.style.borderColor = ''; }, { once: true });
         }
       });
-      if (!valid)
+      if (!valid) return;
+
+      // Simulate async submission (replace with real fetch / FormSubmit / EmailJS, etc.)
+      submitBtn.textContent = 'Sending…';
+      submitBtn.disabled = true;
+
+      setTimeout(() => {
+        form.style.display = 'none';
+        successBox.classList.add('visible');
+        successBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }, 900);
+    });
+  </script>
+
+</body>
+</html>
