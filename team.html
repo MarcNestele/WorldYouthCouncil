@@ -49,6 +49,7 @@
     .nav-links { display: flex; align-items: center; gap: clamp(1rem, 2vw, 2.5rem); list-style: none; }
     .nav-links a { text-decoration: none; font-size: 0.875rem; font-weight: 500; letter-spacing: 0.02em; color: var(--navy); opacity: 0.7; transition: opacity 0.2s; }
     .nav-links a:hover, .nav-links a.active { opacity: 1; }
+    .nav-links a.nav-active { opacity: 1; border-bottom: 2px solid var(--accent); padding-bottom: 2px; }
     .nav-cta { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; text-decoration: none; color: white; background: var(--navy); padding: 0.65rem 1.4rem; border-radius: 4px; transition: background 0.2s, transform 0.2s; }
     .nav-cta:hover { background: #0d3360; transform: translateY(-1px); }
     .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
@@ -295,7 +296,7 @@
     <ul class="nav-links">
       <li><a href="about.html">About</a></li>
       <li><a href="#">Research</a></li>
-      <li><a href="team.html" class="active">Teams</a></li>
+      <li><a href="team.html" class="nav-active">Teams</a></li>
       <li><a href="policy.html">Policy Briefs</a></li>
     </ul>
     <a href="contact.html" class="nav-cta">Contact</a>
