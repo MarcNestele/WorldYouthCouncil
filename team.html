@@ -237,6 +237,15 @@
     .btn-outline { display: inline-flex; align-items: center; gap: .5rem; border: 1.5px solid var(--blue); color: var(--blue); padding: .9rem 2rem; border-radius: 6px; font-size: .875rem; font-weight: 600; letter-spacing: .04em; text-decoration: none; transition: border-color .2s, color .2s, transform .15s; }
     .btn-outline:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
 
+    /* ── Pulse ring animation ── */
+    @keyframes pulse-ring {
+      0%   { r: 5; opacity: 0.7; }
+      100% { r: 18; opacity: 0; }
+    }
+    .pulse-ring {
+      animation: pulse-ring 2.4s ease-out infinite;
+    }
+
     /* ── Footer ── */
     footer { background: var(--navy); color: white; padding: clamp(3.5rem, 7vw, 5.5rem) var(--pad) 2.5rem; }
     .footer-inner { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 2rem; }
@@ -532,8 +541,6 @@
     });
   });
 
-  renderCards('all');
-
   // ── Scroll reveal ──────────────────────────────────────────────────────────
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -541,6 +548,8 @@
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+  renderCards('all');
 
   // ── Navbar ──────────────────────────────────────────────────────────────────
   const navbar = document.getElementById('navbar');
@@ -595,14 +604,15 @@
 
   // Load world topojson
   d3.json('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json').then(world => {
-    // Sphere (ocean)
+
+    // Sphere (ocean background)
     g.append('path')
       .datum({ type: 'Sphere' })
       .attr('d', path)
       .attr('fill', 'rgba(59,130,246,0.07)')
       .attr('stroke', 'none');
 
-    // Countries
+    // Country fills
     g.append('g')
       .selectAll('path')
       .data(topojson.feature(world, world.objects.countries).features)
@@ -612,7 +622,7 @@
       .attr('stroke', 'rgba(255,255,255,0.12)')
       .attr('stroke-width', 0.4);
 
-    // Graticule
+    // Graticule lines
     g.append('path')
       .datum(d3.geoGraticule()())
       .attr('d', path)
@@ -624,60 +634,57 @@
     const markers = g.append('g').attr('class', 'markers');
 
     TEAMS.forEach(team => {
-      const [x, y] = projection([team.lon, team.lat]);
-      if (!x || !y) return;
+      const coords = projection([team.lon, team.lat]);
+      if (!coords) return;
+      const [x, y] = coords;
 
       const isActive = team.status === 'active';
       const color    = isActive ? '#3B82F6' : '#FBBF24';
 
       const markerG = markers.append('g')
-        .attr('transform', `translate(${x},${y})`)
-        .attr('class', 'marker')
+        .attr('transform', 'translate(' + x + ',' + y + ')')
         .style('cursor', 'pointer');
 
-      // Pulse ring (active only)
+      // Pulse ring for active teams — CSS keyframe via class
       if (isActive) {
         markerG.append('circle')
-          .attr('r', 10)
+          .attr('class', 'pulse-ring')
+          .attr('r', 5)
           .attr('fill', 'none')
           .attr('stroke', color)
-          .attr('stroke-width', 1)
-          .attr('opacity', 0)
-          .append('animate')
-            .attr('attributeName', 'r').attr('from', 5).attr('to', 14).attr('dur', '2.4s').attr('repeatCount', 'indefinite');
-        markerG.select('circle')
-          .append('animate')
-            .attr('attributeName', 'opacity').attr('from', 0.6).attr('to', 0).attr('dur', '2.4s').attr('repeatCount', 'indefinite');
+          .attr('stroke-width', 1.5)
+          .attr('opacity', 0.7);
       }
 
-      // Dot
-      markerG.append('circle')
+      // Main dot
+      const dot = markerG.append('circle')
         .attr('r', 5)
         .attr('fill', color)
-        .attr('stroke', 'rgba(11,42,74,0.6)')
-        .attr('stroke-width', 1.2);
+        .attr('stroke', 'rgba(11,42,74,0.7)')
+        .attr('stroke-width', 1.5)
+        .style('transition', 'r 0.15s ease');
 
-      // Hover / click
+      // Hover
       markerG
-        .on('mouseenter', function() { d3.select(this).select('circle:last-child').attr('r', 7); })
-        .on('mouseleave', function() { d3.select(this).select('circle:last-child').attr('r', 5); })
+        .on('mouseenter', function() { dot.attr('r', 8); })
+        .on('mouseleave', function() { dot.attr('r', 5); })
         .on('click', function(event) {
           event.stopPropagation();
           showPanel(team);
         });
     });
 
-    // Click on background closes panel
+    // Click map background to close panel
     svg.on('click', () => panel.classList.remove('visible'));
 
-  }).catch(() => {
-    // Fallback if CDN is unavailable
+  }).catch(err => {
+    console.error('Map load error:', err);
     g.append('text')
       .attr('x', W / 2).attr('y', H / 2)
       .attr('text-anchor', 'middle')
-      .attr('fill', 'rgba(255,255,255,0.3)')
-      .attr('font-size', '14px')
-      .text('Map data could not be loaded. Please check your connection.');
+      .attr('fill', 'rgba(255,255,255,0.35)')
+      .attr('font-size', '13px')
+      .text('Map could not be loaded. Please check your connection.');
   });
   </script>
 </body>
