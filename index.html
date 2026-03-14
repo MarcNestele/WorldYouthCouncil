@@ -26,6 +26,7 @@
       --white:  #ffffff;
       --max:    1575px;
       --pad:    clamp(1.5rem, 5vw, 5rem);
+      --nav-h:  72px;
     }
     .container { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
 
@@ -44,7 +45,8 @@
     /* NAVIGATION */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 999;
-      padding: 1.25rem clamp(1rem, 3vw, 5rem);
+      height: var(--nav-h);
+      padding: 0 clamp(1rem, 3vw, 5rem);
       display: flex; align-items: center; justify-content: space-between;
       gap: 1rem;
       background: rgba(255,255,255,0.92);
@@ -86,7 +88,7 @@
       border-left: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
       border-radius: 0 0 0 14px;
-      padding: calc(72px + 1.25rem) 2rem 1.5rem;
+      padding: calc(var(--nav-h) + 1.25rem) 2rem 1.5rem;
       display: flex;
       flex-direction: column;
       align-items: flex-end;
