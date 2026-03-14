@@ -309,8 +309,8 @@
     .btn-apply {
       display: inline-flex; align-items: center; gap: 0.5rem;
       font-size: 0.8rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
-      padding: 0.85rem 1.75rem; border-radius: 5px; border: none; cursor: not-allowed;
-      transition: opacity 0.2s; opacity: 0.55; text-decoration: none;
+      padding: 0.85rem 1.75rem; border-radius: 5px; border: none; cursor: pointer;
+      transition: opacity 0.2s, transform 0.2s; opacity: 1; text-decoration: none;
     }
     .btn-apply.researcher-btn { background: var(--navy); color: white; }
     .btn-apply.ambassador-btn { background: linear-gradient(135deg, #7C3AED, #3B82F6); color: white; }
@@ -706,7 +706,7 @@
     </div>
 
     <div class="teams-notice reveal reveal-delay-2">
-      Our national teams are currently being established. Applications will open shortly — register your interest below to be notified when your country's team launches.
+      Our national teams are currently being established. Applications are now open — apply below to join your country's research team or become a national ambassador.
     </div>
 
     <div class="apply-cards">
@@ -725,11 +725,10 @@
           <li>Access to WYC's network and events</li>
         </ul>
         <div style="display:flex; align-items:center; flex-wrap:wrap; gap:0.5rem;">
-          <a href="#" class="btn-apply researcher-btn" aria-disabled="true" tabindex="-1">
+          <a href="contact.html" class="btn-apply researcher-btn">
             Apply as Researcher
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
-          <span class="apply-soon-note">Applications opening soon</span>
         </div>
       </div>
 
@@ -748,11 +747,10 @@
           <li>Direct access to the global WYC leadership board</li>
         </ul>
         <div style="display:flex; align-items:center; flex-wrap:wrap; gap:0.5rem;">
-          <a href="#" class="btn-apply ambassador-btn" aria-disabled="true" tabindex="-1">
+          <a href="contact.html" class="btn-apply ambassador-btn">
             Apply as Ambassador Ψ
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
-          <span class="apply-soon-note">Applications opening soon</span>
         </div>
       </div>
     </div>
