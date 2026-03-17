@@ -64,7 +64,7 @@
     .nav-logo-sub { font-size: 0.65rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); display: block; line-height: 1; }
     .nav-links { display: flex; align-items: center; gap: clamp(1rem, 2vw, 2.5rem); list-style: none; }
     .nav-links a { text-decoration: none; font-size: 0.875rem; font-weight: 500; letter-spacing: 0.02em; color: var(--navy); opacity: 0.7; transition: opacity 0.2s; }
-    .nav-links a:hover, .nav-links a.active { opacity: 1; }
+    .nav-links a:hover { opacity: 1; }
     .nav-links a.nav-active { opacity: 1; border-bottom: 2px solid var(--accent); padding-bottom: 2px; }
     .nav-cta {
       font-size: 0.8rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase;
@@ -121,7 +121,6 @@
     .mobile-menu a:last-child { border-bottom: none; }
     .mobile-menu a:hover { opacity: 1; }
     .mobile-close { display: none; }
-    @media (max-width: 1100px) { .nav-links, .nav-cta { display: none; } .hamburger { display: flex; } }
 
     /* DEV BANNER */
     .dev-banner {
@@ -152,9 +151,9 @@
       position: absolute; inset: 0;
       background: linear-gradient(
         110deg,
-        rgba(8,12,20,0.91) 0%,
-        rgba(8,12,20,0.72) 50%,
-        rgba(8,12,20,0.38) 100%
+        rgba(11,42,74,0.93) 0%,
+        rgba(11,42,74,0.80) 50%,
+        rgba(11,42,74,0.45) 100%
       );
     }
     .hero-geo { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
@@ -175,7 +174,7 @@
       font-size: clamp(3.2rem, 7vw, 6.5rem);
       line-height: 1.0; letter-spacing: -0.03em; color: #ffffff; margin-bottom: 1.75rem;
     }
-    h1 em { font-style: italic; color: #93C5FD; }
+    h1 em { font-style: italic; color: #3B82F6; }
     .hero-sub { font-size: clamp(1.05rem, 2vw, 1.25rem); font-weight: 400; color: rgba(255,255,255,0.78); line-height: 1.65; max-width: 810px; margin-bottom: 1.25rem; }
     .hero-desc { font-size: 0.95rem; line-height: 1.75; color: rgba(255,255,255,0.58); max-width: 730px; margin-bottom: 3rem; }
     .btn-group { display: flex; flex-wrap: wrap; gap: 1rem; }
