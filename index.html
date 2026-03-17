@@ -142,31 +142,41 @@
     }
     .hero-bg {
       position: absolute; inset: 0;
-      background:
-        radial-gradient(ellipse 80% 60% at 70% 40%, rgba(59,130,246,0.08) 0%, transparent 70%),
-        radial-gradient(ellipse 50% 50% at 10% 80%, rgba(11,42,74,0.05) 0%, transparent 60%);
+      background-image: url('sean-pollock-PhYq704ffdA-unsplash.jpg');
+      background-size: cover;
+      background-position: center 40%;
+    }
+    .hero-bg::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(
+        110deg,
+        rgba(11,42,74,0.93) 0%,
+        rgba(11,42,74,0.80) 50%,
+        rgba(11,42,74,0.45) 100%
+      );
     }
     .hero-geo { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
     .hero-geo svg {
       position: absolute; right: -4%; top: 50%; transform: translateY(-50%);
-      width: clamp(300px, 48vw, 660px); opacity: 0.055;
+      width: clamp(300px, 48vw, 660px); opacity: 0.07;
     }
     .hero-content { position: relative; max-width: 1090px; }
     .hero-badge {
       display: inline-flex; align-items: center; gap: 0.5rem;
       font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
-      color: var(--blue); border: 1px solid rgba(59,130,246,0.35);
+      color: #93C5FD; border: 1px solid rgba(147,197,253,0.45);
       padding: 0.45rem 1rem; border-radius: 100px; margin-bottom: 2rem;
     }
-    .hero-badge::before { content: ''; display: block; width: 6px; height: 6px; border-radius: 50%; background: var(--blue); }
+    .hero-badge::before { content: ''; display: block; width: 6px; height: 6px; border-radius: 50%; background: #93C5FD; }
     h1 {
       font-family: 'DM Serif Display', serif;
       font-size: clamp(3.2rem, 7vw, 6.5rem);
-      line-height: 1.0; letter-spacing: -0.03em; color: var(--navy); margin-bottom: 1.75rem;
+      line-height: 1.0; letter-spacing: -0.03em; color: #ffffff; margin-bottom: 1.75rem;
     }
-    h1 em { font-style: italic; color: var(--blue); }
-    .hero-sub { font-size: clamp(1.05rem, 2vw, 1.25rem); font-weight: 400; color: var(--muted); line-height: 1.65; max-width: 810px; margin-bottom: 1.25rem; }
-    .hero-desc { font-size: 0.95rem; line-height: 1.75; color: #4A5568; max-width: 730px; margin-bottom: 3rem; }
+    h1 em { font-style: italic; color: #93C5FD; }
+    .hero-sub { font-size: clamp(1.05rem, 2vw, 1.25rem); font-weight: 400; color: rgba(255,255,255,0.78); line-height: 1.65; max-width: 810px; margin-bottom: 1.25rem; }
+    .hero-desc { font-size: 0.95rem; line-height: 1.75; color: rgba(255,255,255,0.58); max-width: 730px; margin-bottom: 3rem; }
     .btn-group { display: flex; flex-wrap: wrap; gap: 1rem; }
     .btn-primary {
       display: inline-flex; align-items: center; gap: 0.5rem;
@@ -179,11 +189,11 @@
     .btn-secondary {
       display: inline-flex; align-items: center; gap: 0.5rem;
       font-size: 0.875rem; font-weight: 600; letter-spacing: 0.03em;
-      color: var(--navy); background: transparent; border: 1.5px solid var(--border);
+      color: white; background: transparent; border: 1.5px solid rgba(255,255,255,0.35);
       padding: 1rem 2rem; border-radius: 4px; text-decoration: none;
       transition: border-color 0.25s, background 0.25s, transform 0.25s;
     }
-    .btn-secondary:hover { border-color: var(--navy); background: var(--light); transform: translateY(-2px); }
+    .btn-secondary:hover { border-color: rgba(255,255,255,0.75); background: rgba(255,255,255,0.08); transform: translateY(-2px); }
     .btn-arrow { transition: transform 0.2s; }
     .btn-primary:hover .btn-arrow, .btn-secondary:hover .btn-arrow { transform: translateX(4px); }
     .hero-stats {
@@ -191,14 +201,14 @@
       display: flex; gap: 3rem; flex-wrap: wrap;
     }
     .hero-stat { display: flex; flex-direction: column; }
-    .hero-stat-num { font-family: 'DM Serif Display', serif; font-size: 2.2rem; color: var(--navy); line-height: 1; }
-    .hero-stat-label { font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-top: 0.25rem; }
+    .hero-stat-num { font-family: 'DM Serif Display', serif; font-size: 2.2rem; color: #ffffff; line-height: 1; }
+    .hero-stat-label { font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-top: 0.25rem; }
     .scroll-indicator {
       position: absolute; bottom: 2.5rem; right: var(--pad);
       display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
-      color: var(--muted); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: rgba(255,255,255,0.4); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase;
     }
-    .scroll-line { width: 1px; height: 50px; background: linear-gradient(to bottom, var(--border), transparent); animation: scrollPulse 2.2s ease-in-out infinite; }
+    .scroll-line { width: 1px; height: 50px; background: linear-gradient(to bottom, rgba(255,255,255,0.3), transparent); animation: scrollPulse 2.2s ease-in-out infinite; }
     @keyframes scrollPulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
 
     /* SHARED SECTION STYLES */
@@ -475,15 +485,15 @@
   <div class="hero-bg"></div>
   <div class="hero-geo">
     <svg viewBox="0 0 700 700" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="350" cy="350" r="280" stroke="#0B2A4A" stroke-width="1"/>
-      <circle cx="350" cy="350" r="200" stroke="#0B2A4A" stroke-width="0.8"/>
-      <circle cx="350" cy="350" r="120" stroke="#0B2A4A" stroke-width="0.6"/>
-      <ellipse cx="350" cy="350" rx="280" ry="100" stroke="#0B2A4A" stroke-width="0.8"/>
-      <ellipse cx="350" cy="350" rx="200" ry="70" stroke="#0B2A4A" stroke-width="0.5"/>
-      <line x1="70" y1="350" x2="630" y2="350" stroke="#0B2A4A" stroke-width="0.6"/>
-      <line x1="350" y1="70" x2="350" y2="630" stroke="#0B2A4A" stroke-width="0.6"/>
-      <line x1="150" y1="150" x2="550" y2="550" stroke="#0B2A4A" stroke-width="0.4"/>
-      <line x1="550" y1="150" x2="150" y2="550" stroke="#0B2A4A" stroke-width="0.4"/>
+      <circle cx="350" cy="350" r="280" stroke="rgba(255,255,255,0.6)" stroke-width="1"/>
+      <circle cx="350" cy="350" r="200" stroke="rgba(255,255,255,0.5)" stroke-width="0.8"/>
+      <circle cx="350" cy="350" r="120" stroke="rgba(255,255,255,0.4)" stroke-width="0.6"/>
+      <ellipse cx="350" cy="350" rx="280" ry="100" stroke="rgba(255,255,255,0.5)" stroke-width="0.8"/>
+      <ellipse cx="350" cy="350" rx="200" ry="70" stroke="rgba(255,255,255,0.35)" stroke-width="0.5"/>
+      <line x1="70" y1="350" x2="630" y2="350" stroke="rgba(255,255,255,0.4)" stroke-width="0.6"/>
+      <line x1="350" y1="70" x2="350" y2="630" stroke="rgba(255,255,255,0.4)" stroke-width="0.6"/>
+      <line x1="150" y1="150" x2="550" y2="550" stroke="rgba(255,255,255,0.25)" stroke-width="0.4"/>
+      <line x1="550" y1="150" x2="150" y2="550" stroke="rgba(255,255,255,0.25)" stroke-width="0.4"/>
     </svg>
   </div>
   <div class="hero-content container">
