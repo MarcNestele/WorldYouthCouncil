@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Use — World Youth Council</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 20.25px; }
+    body { font-family: 'DM Sans', sans-serif; background: #fff; color: #0B2A4A; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+    :root {
+      --navy: #0B2A4A; --blue: #3B82F6; --light: #F5F5F5;
+      --muted: #6B7A8D; --border: #E2E8F0; --white: #ffffff;
+      --max: 1575px; --pad: clamp(1.5rem, 5vw, 5rem); --nav-h: 72px;
+    }
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 999; padding: 1.25rem clamp(1rem, 3vw, 5rem); display: flex; align-items: center; justify-content: space-between; gap: 1rem; background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid transparent; transition: border-color 0.3s, box-shadow 0.3s; }
+    nav.scrolled { border-color: var(--border); box-shadow: 0 2px 24px rgba(11,42,74,0.06); }
+    .nav-logo { display: flex; align-items: center; gap: 0.625rem; text-decoration: none; color: var(--navy); }
+    .nav-logo-mark { width: 34px; height: 34px; background: var(--navy); border-radius: 6px; display: flex; align-items: center; justify-content: center; }
+    .nav-logo-mark svg { width: 18px; height: 18px; fill: none; stroke: white; stroke-width: 1.8; }
+    .nav-logo-text { font-family: 'DM Serif Display', serif; font-size: 1.05rem; letter-spacing: -0.01em; }
+    .nav-logo-sub { font-size: 0.65rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); display: block; line-height: 1; }
+    .nav-links { display: flex; align-items: center; gap: clamp(1rem, 2vw, 2.5rem); list-style: none; }
+    .nav-links a { text-decoration: none; font-size: 0.875rem; font-weight: 500; color: var(--navy); opacity: 0.7; transition: opacity 0.2s; }
+    .nav-links a:hover { opacity: 1; }
+    .nav-cta { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; text-decoration: none; color: white; background: var(--navy); padding: 0.65rem 1.4rem; border-radius: 4px; transition: background 0.2s; }
+    .nav-cta:hover { background: #0d3360; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--navy); border-radius: 2px; transition: 0.3s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu { position: fixed; top: 0; right: 0; z-index: 997; background: rgba(255,255,255,0.97); backdrop-filter: blur(20px); border-left: 1px solid var(--border); border-bottom: 1px solid var(--border); border-radius: 0 0 0 14px; padding: calc(var(--nav-h) + 1.25rem) 2rem 1.5rem; display: flex; flex-direction: column; align-items: flex-end; gap: 0; min-width: 200px; box-shadow: -4px 8px 24px rgba(11,42,74,0.08); transform: translateY(-110%); opacity: 0; transition: transform 0.3s cubic-bezier(0.22,1,0.36,1), opacity 0.25s ease; pointer-events: none; }
+    .mobile-menu.open { transform: translateY(0); opacity: 1; pointer-events: all; }
+    .mobile-menu a { font-size: 0.85rem; font-weight: 500; color: var(--navy); text-decoration: none; padding: 0.6rem 0; border-bottom: 1px solid rgba(0,0,0,0.06); opacity: 0.65; transition: opacity 0.2s; width: 100%; text-align: right; }
+    .mobile-menu a:last-child { border-bottom: none; }
+    .mobile-menu a:hover { opacity: 1; }
+    .page-hero { padding: calc(var(--nav-h) + 4rem) var(--pad) 3.5rem; background: var(--navy); position: relative; overflow: hidden; }
+    .page-hero::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,0.055) 1px, transparent 1px); background-size: 30px 30px; }
+    .page-hero-inner { position: relative; max-width: 860px; }
+    .page-eyebrow { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(59,130,246,0.85); margin-bottom: 1.25rem; }
+    .page-hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2.2rem, 4vw, 3.4rem); line-height: 1.1; letter-spacing: -0.025em; color: white; margin-bottom: 1rem; }
+    .page-hero p { font-size: 0.95rem; color: rgba(255,255,255,0.55); line-height: 1.75; }
+    .page-hero-meta { margin-top: 2rem; font-size: 0.75rem; color: rgba(255,255,255,0.35); letter-spacing: 0.04em; }
+    .legal-body { padding: clamp(3rem, 6vw, 5rem) var(--pad); }
+    .legal-inner { max-width: 860px; }
+    .legal-section { margin-bottom: 3rem; }
+    .legal-section h2 { font-family: 'DM Serif Display', serif; font-size: 1.4rem; color: var(--navy); margin-bottom: 1rem; letter-spacing: -0.015em; }
+    .legal-section p { font-size: 0.9rem; line-height: 1.85; color: #374151; margin-bottom: 0.9rem; }
+    .legal-section ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 0.9rem; }
+    .legal-section ul li { font-size: 0.9rem; line-height: 1.75; color: #374151; padding-left: 1.2rem; position: relative; }
+    .legal-section ul li::before { content: '–'; position: absolute; left: 0; color: var(--blue); }
+    .legal-section a { color: var(--blue); text-decoration: none; }
+    .legal-section a:hover { text-decoration: underline; }
+    .divider { width: 48px; height: 3px; background: var(--blue); border-radius: 2px; margin-bottom: 2.5rem; }
+    footer { background-color: var(--navy); background-image: radial-gradient(rgba(255,255,255,0.055) 1px, transparent 1px); background-size: 30px 30px; color: white; padding: clamp(3.5rem, 7vw, 5.5rem) var(--pad) 2.5rem; }
+    .footer-inner { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 2rem; }
+    .footer-logo { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 1.2rem; }
+    .footer-logo-mark { width: 30px; height: 30px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); border-radius: 6px; display: flex; align-items: center; justify-content: center; }
+    .footer-logo-mark svg { width: 15px; height: 15px; fill: none; stroke: white; stroke-width: 2; }
+    .footer-brand-name { font-family: 'DM Serif Display', serif; font-size: 0.95rem; }
+    .footer-tagline { font-size: 0.875rem; line-height: 1.7; color: rgba(255,255,255,0.45); max-width: 420px; margin-bottom: 1.75rem; }
+    .footer-socials { display: flex; gap: 0.75rem; }
+    .social-btn { width: 34px; height: 34px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: 6px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s; }
+    .social-btn:hover { background: rgba(255,255,255,0.15); }
+    .social-btn svg { width: 15px; height: 15px; fill: rgba(255,255,255,0.7); }
+    .footer-col-title { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 1.25rem; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+    .footer-col a { font-size: 0.875rem; color: rgba(255,255,255,0.55); text-decoration: none; transition: color 0.2s; }
+    .footer-col a:hover { color: white; }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem; }
+    .footer-copy { font-size: 0.8rem; color: rgba(255,255,255,0.3); }
+    .footer-bottom-links { display: flex; gap: 1.5rem; list-style: none; }
+    .footer-bottom-links a { font-size: 0.8rem; color: rgba(255,255,255,0.3); text-decoration: none; transition: color 0.2s; }
+    .footer-bottom-links a:hover { color: rgba(255,255,255,0.7); }
+    @media (max-width: 1100px) { .footer-inner { grid-template-columns: 1fr 1fr; } .nav-links, .nav-cta { display: none; } .hamburger { display: flex; } }
+    @media (max-width: 768px) { html { font-size: 16px; } .nav-logo-sub { display: none; } .footer-col { display: none; } .footer-inner { grid-template-columns: 1fr; } .footer-bottom { flex-direction: column; align-items: flex-start; } }
+    @media (max-width: 480px) { .footer-inner { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<nav id="navbar">
+  <a href="index.html" class="nav-logo" aria-label="World Youth Council">
+    <div class="nav-logo-mark"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3C9 7 9 17 12 21M12 3C15 7 15 17 12 21M3 12h18"/></svg></div>
+    <div>
+      <span class="nav-logo-text">World Youth Council</span>
+      <span class="nav-logo-sub">Global Policy Initiative</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="about.html">About</a></li>
+    <li><a href="research.html">Research</a></li>
+    <li><a href="team.html">Teams</a></li>
+    <li><a href="policy.html">Policy Briefs</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta">Contact</a>
+  <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="about.html" class="mobile-link">About</a>
+  <a href="research.html" class="mobile-link">Research</a>
+  <a href="team.html" class="mobile-link">Teams</a>
+  <a href="policy.html" class="mobile-link">Policy Briefs</a>
+  <a href="contact.html" class="mobile-link">Contact</a>
+</div>
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <p class="page-eyebrow">Legal</p>
+    <h1>Terms of Use</h1>
+    <p>The conditions under which you may access and use the World Youth Council website and its content.</p>
+    <p class="page-hero-meta">Last updated: March 2026</p>
+  </div>
+</section>
+
+<section class="legal-body">
+  <div class="legal-inner">
+    <div class="divider"></div>
+
+    <div class="legal-section">
+      <h2>1. Acceptance of Terms</h2>
+      <p>By accessing or using the World Youth Council website (<a href="https://worldyouthcouncil.org">worldyouthcouncil.org</a>), you agree to be bound by these Terms of Use. If you do not agree to these terms, please do not use the website.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>2. About the Website</h2>
+      <p>This website is operated by the World Youth Council (WYC), a non-commercial, volunteer-run youth policy initiative. The website is intended purely for informational purposes — to provide information about WYC's mission, research output, and membership opportunities.</p>
+      <p>Nothing on this website constitutes legal, financial, or professional advice.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>3. Intellectual Property</h2>
+      <p>All content on this website — including but not limited to text, research publications, graphics, logos, and design — is the property of the World Youth Council and is protected by applicable intellectual property laws.</p>
+      <p>You may not reproduce, distribute, or republish any content from this website without prior written permission from WYC, except for brief quotations with proper attribution for non-commercial academic or journalistic purposes.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>4. Application Submissions</h2>
+      <p>By submitting an application through our website, you confirm that:</p>
+      <ul>
+        <li>The information you provide is accurate and complete to the best of your knowledge</li>
+        <li>You consent to WYC processing your personal data for admissions purposes as described in our <a href="privacy.html">Privacy Policy</a></li>
+        <li>Submission of an application does not guarantee membership or any specific outcome</li>
+      </ul>
+    </div>
+
+    <div class="legal-section">
+      <h2>5. Limitation of Liability</h2>
+      <p>WYC makes reasonable efforts to ensure the accuracy of content on this website, but we provide no warranties of any kind — express or implied — regarding the completeness, accuracy, or reliability of any information presented.</p>
+      <p>WYC shall not be held liable for any direct, indirect, or consequential damages arising from your use of or reliance on any content on this website.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>6. External Links</h2>
+      <p>This website may contain links to third-party websites. These links are provided for convenience only. WYC does not endorse, control, or take responsibility for the content of any external sites.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>7. Changes to These Terms</h2>
+      <p>WYC reserves the right to modify these Terms of Use at any time. The updated version will be posted on this page with a revised date. Continued use of the website after any changes constitutes your acceptance of the revised terms.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>8. Contact</h2>
+      <p>If you have any questions about these Terms of Use, please reach out via our <a href="contact.html">contact page</a>.</p>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="footer-logo-mark"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3C9 7 9 17 12 21M12 3C15 7 15 17 12 21M3 12h18"/></svg></div>
+          <span class="footer-brand-name">World Youth Council</span>
+        </div>
+        <p class="footer-tagline">World Youth Council — A global youth-driven policy initiative connecting young researchers to shape tomorrow's decisions.</p>
+        <div class="footer-socials">
+          <div class="social-btn" aria-label="Twitter"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></div>
+          <div class="social-btn" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></div>
+          <div class="social-btn" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></div>
+        </div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Organization</div>
+        <ul>
+          <li><a href="about.html">About WYC</a></li>
+          <li><a href="index.html#how">How It Works</a></li>
+          <li><a href="team.html">Our Network</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Research</div>
+        <ul>
+          <li><a href="research.html">Research Areas</a></li>
+          <li><a href="policy.html">Policy Briefs</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Get Involved</div>
+        <ul>
+          <li><a href="application.html">Join the Network</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 World Youth Council. All rights reserved.</p>
+      <ul class="footer-bottom-links">
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Use</a></li>
+        <li><a href="cookies.html">Cookie Policy</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 30); }, { passive: true });
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    hamburger.classList.toggle('open', isOpen);
+  });
+  document.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', () => { mobileMenu.classList.remove('open'); hamburger.classList.remove('open'); });
+  });
+</script>
+</body>
+</html>
