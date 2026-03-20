@@ -142,18 +142,26 @@
     }
     .hero-bg {
       position: absolute; inset: 0;
-      background-image: url('sean-pollock-PhYq704ffdA-unsplash.jpg');
-      background-size: cover;
-      background-position: center 40%;
+      background:
+        radial-gradient(ellipse at 20% 55%, rgba(45,107,181,0.22) 0%, transparent 55%),
+        radial-gradient(ellipse at 78% 25%, rgba(59,130,246,0.12) 0%, transparent 48%),
+        radial-gradient(ellipse at 55% 85%, rgba(11,42,74,0.6) 0%, transparent 50%),
+        linear-gradient(155deg, #030c18 0%, #0B2A4A 48%, #0d3258 100%);
+      background-size: auto, auto, auto, auto;
+    }
+    .hero-bg::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: radial-gradient(rgba(255,255,255,0.055) 1px, transparent 1px);
+      background-size: 30px 30px;
     }
     .hero-bg::after {
       content: '';
       position: absolute; inset: 0;
       background: linear-gradient(
-        110deg,
-        rgba(8,12,20,0.91) 0%,
-        rgba(8,12,20,0.72) 50%,
-        rgba(8,12,20,0.38) 100%
+        to right,
+        rgba(3,12,24,0.35) 0%,
+        transparent 65%
       );
     }
     .hero-geo { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
@@ -220,7 +228,7 @@
     .divider { width: 48px; height: 3px; background: var(--blue); border-radius: 2px; margin-bottom: 2rem; }
 
     /* ABOUT */
-    #about { background: var(--light); }
+    #about { background-color: var(--light); }
     .about-inner { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(3rem, 6vw, 7rem); align-items: start; }
     .about-text { font-size: 1rem; line-height: 1.8; color: #4A5568; margin-bottom: 1.2rem; }
     .about-pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5px; margin-top: 1.5rem; }
@@ -241,7 +249,7 @@
     .value-desc { font-size: 0.875rem; color: var(--muted); line-height: 1.6; }
 
     /* HOW IT WORKS */
-    #how { background: white; }
+    #how { background-color: white; }
     .steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 1rem; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
     .step { padding: 2.5rem 2rem; border-right: 1px solid var(--border); transition: background 0.3s; }
     .step:last-child { border-right: none; }
@@ -254,7 +262,7 @@
     .step-desc { font-size: 0.875rem; line-height: 1.65; color: var(--muted); }
 
     /* RESEARCH */
-    #research { background: var(--navy); }
+    #research { background-color: var(--navy); }
     #research .section-eyebrow { color: rgba(59,130,246,0.85); }
     #research h2 { color: white; }
     #research .section-lead { color: rgba(255,255,255,0.5); }
@@ -268,7 +276,7 @@
     .research-tag { display: inline-block; margin-top: 1.25rem; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue); border: 1px solid rgba(59,130,246,0.3); padding: 0.3rem 0.7rem; border-radius: 100px; }
 
     /* NATIONAL RESEARCH TEAMS */
-    #teams { background: white; }
+    #teams { background-color: white; }
     .teams-header { max-width: 900px; margin-bottom: 1rem; }
     .coming-soon-badge {
       display: inline-flex; align-items: center; gap: 0.5rem;
@@ -328,7 +336,7 @@
     .apply-soon-note { font-size: 0.72rem; color: var(--muted); letter-spacing: 0.06em; margin-left: 0.75rem; }
 
     /* POLICY BRIEFS */
-    #briefs { background: var(--light); }
+    #briefs { background-color: var(--light); }
     .briefs-header { max-width: 900px; margin-bottom: 1rem; }
     .briefs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; position: relative; }
     .briefs-coming-overlay {
@@ -355,7 +363,7 @@
     .brief-card-meta { font-size: 0.78rem; color: var(--muted); display: flex; gap: 1rem; margin-top: 1.5rem; }
 
     /* NETWORK */
-    #network { background: var(--light); }
+    #network { background-color: var(--light); }
     .network-inner { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(3rem, 6vw, 7rem); align-items: center; }
     .network-visual { position: relative; height: 420px; border-radius: 12px; overflow: hidden; background: var(--navy); display: flex; align-items: center; justify-content: center; }
     .globe-svg { width: 100%; height: 100%; }
@@ -365,7 +373,7 @@
     .region-pill:hover { border-color: var(--blue); background: #EEF4FF; }
 
     /* JOIN */
-    #join { background: white; }
+    #join { background-color: white; }
     .join-header { text-align: center; max-width: 840px; margin: 0 auto 4.5rem; }
     .join-header .section-lead { margin: 0 auto; }
     .join-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 3.5rem; }
@@ -389,7 +397,11 @@
     .join-note { display: block; margin-top: 1rem; font-size: 0.8rem; color: var(--muted); }
 
     /* FOOTER */
-    footer { background: var(--navy); color: white; padding: clamp(3.5rem, 7vw, 5.5rem) var(--pad) 2.5rem; }
+    footer {
+      background-color: var(--navy);
+      color: white;
+      padding: clamp(3.5rem, 7vw, 5.5rem) var(--pad) 2.5rem;
+    }
     .footer-inner { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 2rem; }
     .footer-logo { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 1.2rem; }
     .footer-logo-mark { width: 30px; height: 30px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); border-radius: 6px; display: flex; align-items: center; justify-content: center; }
@@ -429,21 +441,107 @@
     @media (max-width: 1100px) {
       .about-inner, .network-inner { grid-template-columns: 1fr; }
       .network-visual { height: 280px; order: -1; }
-      .research-grid { grid-template-columns: 1fr; }
+      .research-grid { grid-template-columns: 1fr 1fr; }
       .join-cards { grid-template-columns: 1fr; }
-      .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
       .nav-links, .nav-cta { display: none; }
       .hamburger { display: flex; }
       .hero-stats { gap: 2rem; }
       h1 { font-size: clamp(2.5rem, 11vw, 4rem); }
       .briefs-grid { grid-template-columns: 1fr; }
+      .section-lead { margin-bottom: 2.5rem; }
+      .join-header { margin-bottom: 2.5rem; }
+    }
+    @media (max-width: 768px) {
+      html { font-size: 16px; }
+
+      /* NAV — hide subtitle text on small screens */
+      .nav-logo-sub { display: none; }
+      .nav-logo-text { font-size: 0.95rem; }
+
+      /* DEV BANNER — allow wrapping */
+      .dev-banner { flex-wrap: wrap; font-size: 0.68rem; padding: 0.5rem 1rem; }
+
+      /* HERO */
+      #hero { padding: 6rem var(--pad) 4rem; min-height: auto; }
+      .hero-geo { display: none; }
+      .scroll-indicator { display: none; }
+      .hero-badge { font-size: 0.65rem; }
+      .btn-group { flex-direction: column; align-items: flex-start; }
+      .btn-primary, .btn-secondary { width: auto; font-size: 0.78rem; padding: 0.75rem 1.4rem; }
+
+      /* ABOUT */
+      .about-value { padding: 1.1rem 1rem; }
+      .pillar { padding: 1.25rem 1rem; }
+
+      /* HOW IT WORKS */
+      .step { padding: 1.5rem 1.25rem; }
+      .step-num { font-size: 2.5rem; margin-bottom: 1rem; }
+
+      /* RESEARCH */
+      .research-grid { grid-template-columns: 1fr; }
+      .research-card { padding: 1.5rem 1.25rem; }
+
+      /* TEAMS / APPLY */
+      .apply-card { padding: 1.5rem 1.25rem; }
+      .apply-card-perks { display: none; }
+      .apply-card-desc { margin-bottom: 1rem; }
+      .apply-card-icon { width: 38px; height: 38px; margin-bottom: 1rem; font-size: 1.2rem; }
+      .apply-card h3 { font-size: 1.1rem; }
+
+      /* POLICY BRIEFS — hide the blurred placeholder cards, keep only the overlay */
+      .briefs-grid .brief-card { display: none; }
+      .briefs-grid { min-height: 180px; }
+      .briefs-coming-overlay { position: relative; inset: auto; border-radius: 10px; padding: 2rem 1.25rem; }
+      .briefs-overlay-sub { display: none; }
+
+      /* POLICY BRIEFS overlay */
+      .briefs-coming-overlay { inset: 0; border-radius: 10px; padding: 1.5rem; }
+      .briefs-overlay-title { font-size: 1.2rem; }
+      .briefs-overlay-sub { font-size: 0.78rem; max-width: 100%; }
+
+      /* NETWORK */
+      .network-visual { display: none; }
+      .network-inner { grid-template-columns: 1fr; }
+
+      /* JOIN */
+      .join-card { padding: 1.5rem 1.25rem; }
+      .join-header { margin-bottom: 2rem; }
+      .section-lead { margin-bottom: 2rem; }
+      .join-note { font-size: 0.72rem; }
+
+      /* FOOTER */
+      .footer-inner { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+      .footer-bottom-links { flex-wrap: wrap; gap: 0.75rem 1.25rem; }
+      .footer-col { display: none; } /* hide link columns, keep brand block */
+      .footer-brand { max-width: 100%; }
     }
     @media (max-width: 670px) {
+      html { font-size: 15px; }
+      section { padding: clamp(2.5rem, 8vw, 4rem) var(--pad); }
+      #hero { padding: 5rem var(--pad) 3.5rem; }
       .steps-grid { grid-template-columns: 1fr; }
       .step { border-right: none; border-bottom: 1px solid var(--border); }
       .step:last-child { border-bottom: none; }
       .hero-stats { display: none; }
+      h2 { font-size: clamp(1.9rem, 8vw, 2.8rem); }
+      h3 { font-size: 1.1rem; }
     }
+
+    /* ─── MOBILE / DESKTOP TEXT SWITCHING ─── */
+    .m-hide { display: block; }
+    .m-show { display: none;  }
+    /* inline variant for spans inside buttons etc */
+    span.m-hide { display: inline; }
+    span.m-show { display: none;  }
+    @media (max-width: 1100px) {
+      .m-hide { display: none;  }
+      .m-show { display: block; }
+      span.m-hide { display: none;  }
+      span.m-show { display: inline; }
+    }
+
   </style>
 </head>
 <body>
@@ -504,7 +602,8 @@
     <p class="hero-sub reveal reveal-delay-2">A global network of young researchers developing policy insights for the future.</p>
 
     <!-- ✏️ EDIT: Hero description — two-to-three sentence introduction shown below the subtitle -->
-    <p class="hero-desc reveal reveal-delay-3">The World Youth Council connects ambitious young thinkers from around the world to analyze major policy challenges and develop evidence-based solutions.</p>
+    <p class="hero-desc reveal reveal-delay-3 m-hide">The World Youth Council connects ambitious young thinkers from around the world to analyze major policy challenges and develop evidence-based solutions.</p>
+    <p class="hero-desc reveal reveal-delay-3 m-show">Young researchers. Global policy. Real impact.</p>
 
     <div class="btn-group reveal reveal-delay-4">
       <a href="application.html" class="btn-primary">Join the Network <svg class="btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
@@ -527,10 +626,12 @@
         <h2 class="reveal reveal-delay-1">Rigorous analysis.<br/>Global perspectives.</h2>
 
         <!-- ✏️ EDIT: About paragraph 1 — introductory paragraph, 2–3 sentences, describes what WYC is -->
-        <p class="about-text reveal reveal-delay-2">The World Youth Council is a youth-led global policy initiative bringing together talented students and young researchers from different countries.</p>
+        <p class="about-text reveal reveal-delay-2 m-hide">The World Youth Council is a youth-led global policy initiative bringing together talented students and young researchers from different countries.</p>
+        <p class="about-text reveal reveal-delay-2 m-show">A youth-led policy initiative connecting researchers worldwide.</p>
 
         <!-- ✏️ EDIT: About paragraph 2 — mission statement paragraph, 2–3 sentences -->
-        <p class="about-text reveal reveal-delay-2">Our mission is to promote rigorous policy analysis, cross-border collaboration, and the development of innovative solutions to global challenges.</p>
+        <p class="about-text reveal reveal-delay-2 m-hide">Our mission is to promote rigorous policy analysis, cross-border collaboration, and the development of innovative solutions to global challenges.</p>
+        <p class="about-text reveal reveal-delay-2 m-show">Rigorous analysis. Cross-border collaboration. Global solutions.</p>
 
         <div class="about-pillars">
           <div class="pillar reveal reveal-delay-1">
@@ -560,7 +661,8 @@
             <div class="value-text">
               <div class="value-title">Intellectual Independence</div>
               <!-- ✏️ EDIT: Value 01 description — one to two sentences -->
-              <div class="value-desc">We maintain complete independence in our research, free from political or institutional bias, allowing for honest and objective analysis.</div>
+              <div class="value-desc m-hide">We maintain complete independence in our research, free from political or institutional bias, allowing for honest and objective analysis.</div>
+              <div class="value-desc m-show">Free from political bias. Always honest and objective.</div>
             </div>
           </li>
           <li class="about-value reveal reveal-delay-1">
@@ -568,7 +670,8 @@
             <div class="value-text">
               <div class="value-title">Analytical Rigor</div>
               <!-- ✏️ EDIT: Value 02 description — one to two sentences -->
-              <div class="value-desc">Our research is grounded in real data and honest analysis — we don't make recommendations we can't back up.</div>
+              <div class="value-desc m-hide">Our research is grounded in real data and honest analysis — we don't make recommendations we can't back up.</div>
+              <div class="value-desc m-show">Evidence-based. No recommendations without data.</div>
             </div>
           </li>
           <li class="about-value reveal reveal-delay-2">
@@ -576,7 +679,8 @@
             <div class="value-text">
               <div class="value-title">International Collaboration</div>
               <!-- ✏️ EDIT: Value 03 description — one to two sentences -->
-              <div class="value-desc">We actively foster cross-border partnerships, believing that diverse perspectives yield stronger, more nuanced policy solutions.</div>
+              <div class="value-desc m-hide">We actively foster cross-border partnerships, believing that diverse perspectives yield stronger, more nuanced policy solutions.</div>
+              <div class="value-desc m-show">Diverse perspectives. Stronger solutions.</div>
             </div>
           </li>
           <li class="about-value reveal reveal-delay-3">
@@ -584,7 +688,8 @@
             <div class="value-text">
               <div class="value-title">Youth Empowerment</div>
               <!-- ✏️ EDIT: Value 04 description — one to two sentences -->
-              <div class="value-desc">We champion young voices at every level of global discourse, giving the next generation tools to shape the policies that will define their world.</div>
+              <div class="value-desc m-hide">We champion young voices at every level of global discourse, giving the next generation tools to shape the policies that will define their world.</div>
+              <div class="value-desc m-show">Young voices at the heart of global policy.</div>
             </div>
           </li>
         </ul>
@@ -600,7 +705,8 @@
     <div class="divider reveal reveal-delay-1"></div>
     <h2 class="reveal reveal-delay-1">How It Works</h2>
     <!-- ✏️ EDIT: How It Works intro — one sentence describing the process flow -->
-    <p class="section-lead reveal reveal-delay-2">From national ambassadors to published policy briefs — a structured process designed to produce rigorous, actionable research.</p>
+    <p class="section-lead reveal reveal-delay-2 m-hide">From national ambassadors to published policy briefs — a structured process designed to produce rigorous, actionable research.</p>
+    <p class="section-lead reveal reveal-delay-2 m-show">Ambassadors. Teams. Research. Briefs.</p>
     <div class="steps-grid">
       <div class="step reveal">
         <span class="step-num">01</span>
@@ -608,7 +714,8 @@
         <div class="step-label">Ambassadors</div>
         <h3>National Representatives</h3>
         <!-- ✏️ EDIT: Step 01 description -->
-        <p class="step-desc">Country-level ambassadors coordinate research initiatives, recruit local talent, and represent WYC in national and regional policy forums.</p>
+        <p class="step-desc m-hide">Country-level ambassadors coordinate research initiatives, recruit local talent, and represent WYC in national and regional policy forums.</p>
+        <p class="step-desc m-show">Ambassadors lead local research and represent WYC nationally.</p>
       </div>
       <div class="step reveal reveal-delay-1">
         <span class="step-num">02</span>
@@ -616,7 +723,8 @@
         <div class="step-label">Research Teams</div>
         <h3>Collaborative Groups</h3>
         <!-- ✏️ EDIT: Step 02 description -->
-        <p class="step-desc">Small, multidisciplinary teams of young researchers collaborate across borders on focused policy topics, combining diverse academic backgrounds.</p>
+        <p class="step-desc m-hide">Small, multidisciplinary teams of young researchers collaborate across borders on focused policy topics, combining diverse academic backgrounds.</p>
+        <p class="step-desc m-show">Cross-border teams tackle focused policy topics together.</p>
       </div>
       <div class="step reveal reveal-delay-2">
         <span class="step-num">03</span>
@@ -624,7 +732,8 @@
         <div class="step-label">Case Studies</div>
         <h3>Real-World Analysis</h3>
         <!-- ✏️ EDIT: Step 03 description -->
-        <p class="step-desc">Teams select and analyze real policy challenges, conducting primary and secondary research to understand root causes and evaluate existing approaches.</p>
+        <p class="step-desc m-hide">Teams select and analyze real policy challenges, conducting primary and secondary research to understand root causes and evaluate existing approaches.</p>
+        <p class="step-desc m-show">Real challenges. Primary research. Root-cause analysis.</p>
       </div>
       <div class="step reveal reveal-delay-3">
         <span class="step-num">04</span>
@@ -632,7 +741,8 @@
         <div class="step-label">Policy Briefs</div>
         <h3>Actionable Recommendations</h3>
         <!-- ✏️ EDIT: Step 04 description -->
-        <p class="step-desc">Research findings are distilled into concise, evidence-based policy briefs targeted at decision-makers, civil society, and the broader public.</p>
+        <p class="step-desc m-hide">Research findings are distilled into concise, evidence-based policy briefs targeted at decision-makers, civil society, and the broader public.</p>
+        <p class="step-desc m-show">Findings become concise briefs for decision-makers.</p>
       </div>
     </div>
   </div>
@@ -645,48 +755,55 @@
     <div class="divider reveal reveal-delay-1"></div>
     <h2 class="reveal reveal-delay-1">Research Focus</h2>
     <!-- ✏️ EDIT: Research Focus intro — one sentence summarising the six research pillars -->
-    <p class="section-lead reveal reveal-delay-2">Six priority areas where youth perspectives and rigorous analysis can meaningfully advance global discourse.</p>
+    <p class="section-lead reveal reveal-delay-2 m-hide">Six priority areas where youth perspectives and rigorous analysis can meaningfully advance global discourse.</p>
+    <p class="section-lead reveal reveal-delay-2 m-show">Six areas. Youth perspectives. Global impact.</p>
     <div class="research-grid">
       <div class="research-card reveal">
         <span class="research-card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3C9 7 9 17 12 21M12 3C15 7 15 17 12 21"/><path d="M3 12h18"/><path d="M4.5 7.5h15M4.5 16.5h15"/></svg></span>
         <h3>Global Governance</h3>
         <!-- ✏️ EDIT: Research card — Global Governance -->
-        <p>Examining the architecture of multilateral institutions and how they can be reformed to better address 21st-century challenges.</p>
+        <p class="m-hide">Examining the architecture of multilateral institutions and how they can be reformed to better address 21st-century challenges.</p>
+        <p class="m-show">Reforming multilateral institutions for the 21st century.</p>
         <span class="research-tag">Governance</span>
       </div>
       <div class="research-card reveal reveal-delay-1">
         <span class="research-card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></span>
         <h3>Economic Development</h3>
         <!-- ✏️ EDIT: Research card — Economic Development -->
-        <p>Analyzing pathways for inclusive growth, trade policy, and financial systems that reduce inequality while fostering sustainable prosperity.</p>
+        <p class="m-hide">Analyzing pathways for inclusive growth, trade policy, and financial systems that reduce inequality while fostering sustainable prosperity.</p>
+        <p class="m-show">Inclusive growth, trade policy, and reducing inequality.</p>
         <span class="research-tag">Economics</span>
       </div>
       <div class="research-card reveal reveal-delay-2">
         <span class="research-card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span>
         <h3>Technology &amp; Society</h3>
         <!-- ✏️ EDIT: Research card — Technology & Society -->
-        <p>Assessing the regulatory and ethical implications of emerging technologies, from artificial intelligence to digital infrastructure and data governance.</p>
+        <p class="m-hide">Assessing the regulatory and ethical implications of emerging technologies, from artificial intelligence to digital infrastructure and data governance.</p>
+        <p class="m-show">Regulating AI, digital infrastructure, and data governance.</p>
         <span class="research-tag">Technology</span>
       </div>
       <div class="research-card reveal reveal-delay-1">
         <span class="research-card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12"/><path d="M5 3a7 7 0 0 0 7 7 7 7 0 0 0 7-7"/><path d="M5 9a7 7 0 0 1 7 7 7 7 0 0 1-7-7"/></svg></span>
         <h3>Climate Policy</h3>
         <!-- ✏️ EDIT: Research card — Climate Policy -->
-        <p>Developing youth-informed frameworks for climate action, green transitions, and international environmental agreements.</p>
+        <p class="m-hide">Developing youth-informed frameworks for climate action, green transitions, and international environmental agreements.</p>
+        <p class="m-show">Youth-led frameworks for climate action and green transitions.</p>
         <span class="research-tag">Environment</span>
       </div>
       <div class="research-card reveal reveal-delay-2">
         <span class="research-card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg></span>
         <h3>Democracy &amp; Institutions</h3>
         <!-- ✏️ EDIT: Research card — Democracy & Institutions -->
-        <p>Exploring how democratic norms, civil liberties, and accountable institutions can be strengthened against contemporary pressures.</p>
+        <p class="m-hide">Exploring how democratic norms, civil liberties, and accountable institutions can be strengthened against contemporary pressures.</p>
+        <p class="m-show">Strengthening democracy and civil liberties worldwide.</p>
         <span class="research-tag">Politics</span>
       </div>
       <div class="research-card reveal reveal-delay-3">
         <span class="research-card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
         <h3>International Security</h3>
         <!-- ✏️ EDIT: Research card — International Security -->
-        <p>Examining conflict prevention, arms control, humanitarian law, and the evolving landscape of global security threats.</p>
+        <p class="m-hide">Examining conflict prevention, arms control, humanitarian law, and the evolving landscape of global security threats.</p>
+        <p class="m-show">Conflict prevention, arms control, and global security.</p>
         <span class="research-tag">Security</span>
       </div>
     </div>
@@ -704,11 +821,13 @@
       <div class="divider reveal reveal-delay-1"></div>
       <h2 class="reveal reveal-delay-1">National Research<br/>Teams</h2>
       <!-- ✏️ EDIT: Teams intro — two to three sentences explaining the national teams concept -->
-      <p class="section-lead reveal reveal-delay-2" style="margin-bottom: 2rem;">Each national team is coordinated by a Country Ambassador and consists of researchers working on region-specific policy challenges. Teams collaborate internationally while staying rooted in their local contexts.</p>
+      <p class="section-lead reveal reveal-delay-2 m-hide" style="margin-bottom: 2rem;">Each national team is coordinated by a Country Ambassador and consists of researchers working on region-specific policy challenges. Teams collaborate internationally while staying rooted in their local contexts.</p>
+      <p class="section-lead reveal reveal-delay-2 m-show" style="margin-bottom: 2rem;">Country teams led by ambassadors. Local roots, global reach.</p>
     </div>
 
     <div class="teams-notice reveal reveal-delay-2">
-      Our national teams are currently being established. Applications are now open — apply below to join your country's research team or become a national ambassador.
+      <span class="m-hide">Our national teams are currently being established. Applications are now open — apply below to join your country's research team or become a national ambassador.</span>
+      <span class="m-show">Teams forming now. Apply to join or become an ambassador.</span>
     </div>
 
     <div class="apply-cards">
@@ -718,7 +837,8 @@
         <div class="apply-card-role">Open Role</div>
         <h3>Researcher</h3>
         <!-- ✏️ EDIT: Researcher card description — 2–3 sentences explaining the researcher role -->
-        <p class="apply-card-desc">Join a national research team as an analyst and contribute to policy briefs, case studies, and collaborative research projects. Researchers work under the guidance of Country Ambassadors and connect with a global network of peers.</p>
+        <p class="apply-card-desc m-hide">Join a national research team as an analyst and contribute to policy briefs, case studies, and collaborative research projects. Researchers work under the guidance of Country Ambassadors and connect with a global network of peers.</p>
+        <p class="apply-card-desc m-show">Contribute to policy briefs and collaborate with researchers globally.</p>
         <ul class="apply-card-perks">
           <!-- ✏️ EDIT: Researcher perks — edit or extend this list as needed -->
           <li>Contribute to internationally published policy briefs</li>
@@ -728,8 +848,8 @@
         </ul>
         <div style="display:flex; align-items:center; flex-wrap:wrap; gap:0.5rem;">
           <a href="application.html" class="btn-apply researcher-btn">
-            Apply as Researcher
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <span class="m-hide">Apply as Researcher</span><span class="m-show">Apply →</span>
+            <svg class="m-hide" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         </div>
       </div>
@@ -740,7 +860,8 @@
         <div class="apply-card-role">Leadership Role</div>
         <h3>Ambassador Ψ</h3>
         <!-- ✏️ EDIT: Ambassador card description — 2–3 sentences explaining the ambassador role -->
-        <p class="apply-card-desc">Become a Country Ambassador and lead WYC's presence in your nation. Ambassadors build and coordinate local research teams, represent WYC in national forums, and serve as the primary liaison to the global WYC leadership.</p>
+        <p class="apply-card-desc m-hide">Become a Country Ambassador and lead WYC's presence in your nation. Ambassadors build and coordinate local research teams, represent WYC in national forums, and serve as the primary liaison to the global WYC leadership.</p>
+        <p class="apply-card-desc m-show">Lead WYC in your country. Build teams, represent, connect.</p>
         <ul class="apply-card-perks">
           <!-- ✏️ EDIT: Ambassador perks — edit or extend this list as needed -->
           <li>Lead and build your country's WYC research team</li>
@@ -750,8 +871,8 @@
         </ul>
         <div style="display:flex; align-items:center; flex-wrap:wrap; gap:0.5rem;">
           <a href="application.html" class="btn-apply ambassador-btn">
-            Apply as Ambassador Ψ
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <span class="m-hide">Apply as Ambassador Ψ</span><span class="m-show">Apply →</span>
+            <svg class="m-hide" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         </div>
       </div>
@@ -877,7 +998,8 @@
         <div class="divider reveal reveal-delay-1"></div>
         <h2 class="reveal reveal-delay-1">Connecting<br/>young minds<br/>worldwide.</h2>
         <!-- ✏️ EDIT: Network section lead — one to two sentences on the global community -->
-        <p class="section-lead reveal reveal-delay-2">The World Youth Council brings together motivated young people from across continents to collaborate on policy research and exchange perspectives.</p>
+        <p class="section-lead reveal reveal-delay-2 m-hide">The World Youth Council brings together motivated young people from across continents to collaborate on policy research and exchange perspectives.</p>
+        <p class="section-lead reveal reveal-delay-2 m-show">Young people from every continent. One shared mission.</p>
         <div class="region-list reveal reveal-delay-2">
           <span class="region-pill">Africa</span>
           <span class="region-pill">Asia-Pacific</span>
@@ -885,6 +1007,9 @@
           <span class="region-pill">Europe</span>
           <span class="region-pill">MENA</span>
           <span class="region-pill">Central Asia</span>
+        </div>
+        <div class="m-show" style="margin-top: 2rem;">
+          <a href="about.html" style="display:inline-flex; align-items:center; gap:0.5rem; font-size:0.78rem; font-weight:600; letter-spacing:0.04em; color:white; background:var(--navy); padding:0.6rem 1.25rem; border-radius:4px; text-decoration:none;">Browse <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         </div>
       </div>
     </div>
@@ -899,26 +1024,30 @@
       <div class="divider reveal reveal-delay-1" style="margin: 0 auto 2rem;"></div>
       <h2 class="reveal reveal-delay-1">Shape the policies<br/>of tomorrow.</h2>
       <!-- ✏️ EDIT: Join section lead — one to two sentences inviting the reader to get involved -->
-      <p class="section-lead reveal reveal-delay-2">Whether you're a researcher, a student, or a future leader — there's a place for you in the World Youth Council.</p>
+      <p class="section-lead reveal reveal-delay-2 m-hide">Whether you're a researcher, a student, or a future leader — there's a place for you in the World Youth Council.</p>
+      <p class="section-lead reveal reveal-delay-2 m-show">Researcher, student, or future leader — join us.</p>
     </div>
     <div class="join-cards">
       <div class="join-card reveal">
         <div class="join-card-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
         <h3>Become an Ambassador</h3>
         <!-- ✏️ EDIT: Join card — Ambassador description -->
-        <p>Lead research initiatives in your country. Represent WYC nationally, recruit researchers, and connect your community to the global network.</p>
+        <p class="m-hide">Lead research initiatives in your country. Represent WYC nationally, recruit researchers, and connect your community to the global network.</p>
+        <p class="m-show">Lead local research. Represent WYC nationally.</p>
       </div>
       <div class="join-card reveal reveal-delay-1">
         <div class="join-card-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
         <h3>Join a Research Team</h3>
         <!-- ✏️ EDIT: Join card — Research Team description -->
-        <p>Collaborate with international peers on focused policy projects. Contribute your expertise and perspective to cross-border analytical work.</p>
+        <p class="m-hide">Collaborate with international peers on focused policy projects. Contribute your expertise and perspective to cross-border analytical work.</p>
+        <p class="m-show">Work with peers on cross-border policy projects.</p>
       </div>
       <div class="join-card reveal reveal-delay-2">
         <div class="join-card-icon"><svg viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></div>
         <h3>Contribute Research</h3>
         <!-- ✏️ EDIT: Join card — Contribute Research description -->
-        <p>Publish analytical work and policy ideas through WYC's platform. Reach a global audience of policymakers, academics, and fellow researchers.</p>
+        <p class="m-hide">Publish analytical work and policy ideas through WYC's platform. Reach a global audience of policymakers, academics, and fellow researchers.</p>
+        <p class="m-show">Publish your research. Reach a global audience.</p>
       </div>
     </div>
     <div class="join-cta reveal">
@@ -938,7 +1067,8 @@
           <span class="footer-brand-name">World Youth Council</span>
         </div>
         <!-- ✏️ EDIT: Footer tagline — one sentence brand description -->
-        <p class="footer-tagline">World Youth Council — A global youth-driven policy initiative connecting young researchers to shape tomorrow's decisions.</p>
+        <p class="footer-tagline m-hide">World Youth Council — A global youth-driven policy initiative connecting young researchers to shape tomorrow's decisions.</p>
+        <p class="footer-tagline m-show">Youth-driven policy research. Global reach.</p>
         <div class="footer-socials">
           <div class="social-btn" aria-label="Twitter"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></div>
           <div class="social-btn" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></div>
