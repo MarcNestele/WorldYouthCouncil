@@ -308,6 +308,41 @@
       .cta-btns { flex-direction: column; }
       .footer-inner { grid-template-columns: 1fr; }
     }
+
+    /* ── TEXT SWITCHING ─────────────────────────────────────── */
+    .m-hide { display: block; }
+    .m-show { display: none; }
+    span.m-hide { display: inline; }
+    span.m-show { display: none; }
+    @media (max-width: 1100px) {
+      .m-hide { display: none; }
+      .m-show { display: block; }
+      span.m-hide { display: none; }
+      span.m-show { display: inline; }
+    }
+
+    /* ── MOBILE FIXES ───────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      html { font-size: 16px; }
+      .nav-logo-sub { display: none; }
+      /* Hero */
+      .page-hero { padding: 5.5rem 1.25rem 4rem; }
+      .page-hero h1 { font-size: clamp(2rem, 9vw, 3rem); }
+      .page-hero p { font-size: 0.9rem; }
+      /* Output cards — reduce padding */
+      .output-card-left { padding: 1.5rem 1.25rem; }
+      .output-card-right { padding: 1.5rem 1.25rem; }
+      /* Process steps already 1 col at 680px */
+      /* Footer */
+      .footer-col { display: none; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+      .footer-bottom-links { flex-wrap: wrap; gap: 0.75rem 1.25rem; }
+    }
+    @media (max-width: 670px) {
+      html { font-size: 15px; }
+      .page-hero { padding: 4.5rem 1rem 3rem; }
+    }
   </style>
 </head>
 
@@ -353,7 +388,8 @@
       <div class="hero-inner">
         <p class="hero-eyebrow">Research</p>
         <h1>How WYC<br>Produces Knowledge</h1>
-        <p>WYC publishes five distinct output formats — each designed for a specific audience, purpose, and depth of analysis. From rapid policy responses to in-depth comparative studies, our work is structured to have real-world impact.</p>
+        <p class="m-hide">WYC publishes five distinct output formats — each designed for a specific audience, purpose, and depth of analysis. From rapid policy responses to in-depth comparative studies, our work is structured to have real-world impact.</p>
+        <p class="m-show">Five output formats. Built for real-world impact.</p>
       </div>
     </section>
 
@@ -363,7 +399,8 @@
         <div class="reveal">
           <p class="section-label">Our Approach</p>
           <h2>Rigorous research.<br>Youth perspective.<br>Actionable outputs.</h2>
-          <p>Every WYC publication is produced by trained young researchers under structured methodology. We apply academic standards while keeping policy relevance at the centre of everything we write.</p>
+          <p class="m-hide">Every WYC publication is produced by trained young researchers under structured methodology. We apply academic standards while keeping policy relevance at the centre of everything we write.</p>
+          <p class="m-show">Academic standards. Policy relevance at the centre.</p>
         </div>
         <div class="intro-stats reveal reveal-delay-1">
           <div class="intro-stat">
@@ -393,7 +430,8 @@
         <div class="outputs-header reveal">
           <p class="section-label">Output Formats</p>
           <h2>Five formats for five<br>different purposes.</h2>
-          <p>Each output type is calibrated to a specific use case — whether that is advising a policymaker, informing public debate, or making complex data accessible to a general audience.</p>
+          <p class="m-hide">Each output type is calibrated to a specific use case — whether that is advising a policymaker, informing public debate, or making complex data accessible to a general audience.</p>
+          <p class="m-show">Each format serves a distinct purpose and audience.</p>
         </div>
 
         <!-- 1 — Policy Brief -->
@@ -412,7 +450,8 @@
             </div>
           </div>
           <div class="output-card-right">
-            <p class="output-purpose"><strong>Purpose:</strong> Influence policymakers and political organisations with concise, evidence-based recommendations on a specific issue.</p>
+            <p class="output-purpose m-hide"><strong>Purpose:</strong> Influence policymakers and political organisations with concise, evidence-based recommendations on a specific issue.</p>
+            <p class="output-purpose m-show"><strong>Purpose:</strong> Concise, evidence-based recommendations for policymakers.</p>
             <span class="output-structure-label">Document Structure</span>
             <div class="output-structure">
               <div class="structure-item"><div class="structure-num">1</div><span>Executive Summary</span></div>
@@ -441,7 +480,8 @@
             </div>
           </div>
           <div class="output-card-right">
-            <p class="output-purpose"><strong>Purpose:</strong> Examine how differences in policy design and institutional frameworks across countries shape divergent youth outcomes — providing in-depth cross-national analysis.</p>
+            <p class="output-purpose m-hide"><strong>Purpose:</strong> Examine how differences in policy design and institutional frameworks across countries shape divergent youth outcomes — providing in-depth cross-national analysis.</p>
+            <p class="output-purpose m-show"><strong>Purpose:</strong> Cross-national analysis of youth policy outcomes.</p>
             <span class="output-structure-label">Document Structure</span>
             <div class="output-structure">
               <div class="structure-item"><div class="structure-num">1</div><span>Executive Summary</span></div>
@@ -470,7 +510,8 @@
             </div>
           </div>
           <div class="output-card-right">
-            <p class="output-purpose"><strong>Purpose:</strong> Evaluate how proposed or existing policies specifically affect young people — surfacing both intended effects and risks of unintended consequences.</p>
+            <p class="output-purpose m-hide"><strong>Purpose:</strong> Evaluate how proposed or existing policies specifically affect young people — surfacing both intended effects and risks of unintended consequences.</p>
+            <p class="output-purpose m-show"><strong>Purpose:</strong> Evaluate policy impact on young people.</p>
             <span class="output-structure-label">Document Structure</span>
             <div class="output-structure">
               <div class="structure-item"><div class="structure-num">1</div><span>Policy Overview</span></div>
@@ -497,7 +538,8 @@
             </div>
           </div>
           <div class="output-card-right">
-            <p class="output-purpose"><strong>Purpose:</strong> Provide rapid, structured responses to current political developments — articulating WYC's normative stance and a focused policy ask on behalf of youth.</p>
+            <p class="output-purpose m-hide"><strong>Purpose:</strong> Provide rapid, structured responses to current political developments — articulating WYC's normative stance and a focused policy ask on behalf of youth.</p>
+            <p class="output-purpose m-show"><strong>Purpose:</strong> Rapid responses articulating WYC's stance on current developments.</p>
             <span class="output-structure-label">Document Structure</span>
             <div class="output-structure">
               <div class="structure-item"><div class="structure-num">1</div><span>Context</span></div>
@@ -524,7 +566,8 @@
             </div>
           </div>
           <div class="output-card-right">
-            <p class="output-purpose"><strong>Purpose:</strong> Make complex issues digestible for a broad audience through data visualisations and plain-language explanations — without normative recommendations.</p>
+            <p class="output-purpose m-hide"><strong>Purpose:</strong> Make complex issues digestible for a broad audience through data visualisations and plain-language explanations — without normative recommendations.</p>
+            <p class="output-purpose m-show"><strong>Purpose:</strong> Clear data visualisations for a broad audience.</p>
             <span class="output-structure-label">Document Structure</span>
             <div class="output-structure">
               <div class="structure-item"><div class="structure-num">1</div><span>Charts & Visual Data</span></div>
@@ -543,7 +586,8 @@
         <div class="process-header reveal">
           <p class="section-label">Our Process</p>
           <h2>From question to publication.</h2>
-          <p>All WYC outputs follow a structured production cycle designed to maintain quality, independence, and methodological transparency.</p>
+          <p class="m-hide">All WYC outputs follow a structured production cycle designed to maintain quality, independence, and methodological transparency.</p>
+          <p class="m-show">Structured cycle. Quality and independence guaranteed.</p>
         </div>
         <div class="process-steps">
           <div class="process-step reveal reveal-delay-1">
@@ -588,7 +632,8 @@
         <div class="cta-text reveal">
           <p class="section-label" style="color:rgba(255,255,255,.5);">Get Involved</p>
           <h2>Contribute to<br>WYC research.</h2>
-          <p>Whether you want to author a brief, join a national research team, or submit a topic proposal — we want to hear from you.</p>
+          <p class="m-hide">Whether you want to author a brief, join a national research team, or submit a topic proposal — we want to hear from you.</p>
+          <p class="m-show">Author a brief, join a team, or propose a topic.</p>
         </div>
         <div class="cta-btns reveal reveal-delay-1">
           <a href="application.html" class="cta-btn-primary">
