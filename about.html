@@ -399,11 +399,15 @@
       display: block;
     }
     .founder-photo-placeholder {
+      position: absolute;
+      inset: 0;
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
       gap: .75rem;
       color: #9ca3af;
+      background: var(--gray);
     }
     .founder-photo-placeholder svg { width: 48px; height: 48px; opacity: .4; }
     .founder-photo-placeholder span {
@@ -988,20 +992,13 @@
           <!-- ✏️ EDIT: Replace with your partner's name and photo -->
           <div class="founder-card reveal reveal-delay-1">
             <div class="founder-photo">
-              <!-- 
-                TO ADD YOUR PARTNER'S PHOTO:
-                Replace the placeholder block below with:
-                <img src="partner-photo.jpg" alt="Partner Name" />
-              -->
-              <div class="founder-photo-placeholder">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              <img src="IMG_9175.JPG" alt="Amira Benkredda" />
               </div>
-
             </div>
             <div class="founder-body">
               <p class="founder-role">Co-Founder</p>
               <!-- ✏️ EDIT: Replace with your partner's name -->
-              <h3 class="founder-name"><!-- Partner Name --></h3>
+              <h3 class="founder-name">Amira Benkredda</h3>
               <!-- ✏️ EDIT: Replace with your partner's message -->
               <p class="founder-message-text"><!-- Partner's message here --></p>
             </div>
@@ -1227,5 +1224,4 @@
   </script>
 
 </body>
-</html>
 </html>
