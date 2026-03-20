@@ -211,6 +211,45 @@
       .briefs-grid { grid-template-columns: 1fr; }
       .footer-inner { grid-template-columns: 1fr; }
     }
+
+    /* ── TEXT SWITCHING ─────────────────────────────────────── */
+    .m-hide { display: block; }
+    .m-show { display: none; }
+    span.m-hide { display: inline; }
+    span.m-show { display: none; }
+    @media (max-width: 1100px) {
+      .m-hide { display: none; }
+      .m-show { display: block; }
+      span.m-hide { display: none; }
+      span.m-show { display: inline; }
+    }
+
+    /* ── MOBILE FIXES ───────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      html { font-size: 16px; }
+      .nav-logo-sub { display: none; }
+      /* Hero */
+      .page-hero { padding: 5.5rem 1.25rem 4rem; }
+      .page-hero h1 { font-size: clamp(2rem, 9vw, 3rem); }
+      .page-hero p { font-size: 0.9rem; }
+      /* Launch banner */
+      .launch-banner { flex-direction: column; align-items: flex-start; gap: 0.75rem; padding: 1rem 1.25rem; }
+      /* Filter bar */
+      .filter-bar-inner { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+      /* Brief cards — reduce padding */
+      .brief-body { padding: 1.25rem; }
+      .featured-body { padding: 1.5rem; }
+      .featured-cover { min-height: 160px; }
+      /* Footer */
+      .footer-col { display: none; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+      .footer-bottom-links { flex-wrap: wrap; gap: 0.75rem 1.25rem; }
+    }
+    @media (max-width: 670px) {
+      html { font-size: 15px; }
+      .page-hero { padding: 4.5rem 1rem 3rem; }
+    }
   </style>
 </head>
 
@@ -257,14 +296,16 @@
       <div class="hero-inner">
         <p class="hero-eyebrow">Publications</p>
         <h1>Policy Briefs &<br>Research Papers</h1>
-        <p>Evidence-based policy analysis produced by young researchers from around the world — addressing the issues that will define the next generation of global governance.</p>
+        <p class="m-hide">Evidence-based policy analysis produced by young researchers from around the world — addressing the issues that will define the next generation of global governance.</p>
+        <p class="m-show">Youth-led policy analysis. Global governance challenges.</p>
       </div>
     </section>
 
     <!-- ── Launch Banner ──────────────────────────────────────────── -->
     <div class="launch-banner">
       <span class="launch-dot"></span>
-      <p><strong>Launching Soon</strong> — Our first cohort of policy briefs is currently under review. Publications will be released in the coming months.</p>
+      <p class="m-hide"><strong>Launching Soon</strong> — Our first cohort of policy briefs is currently under review. Publications will be released in the coming months.</p>
+      <p class="m-show"><strong>Launching Soon</strong> — First briefs under review.</p>
     </div>
 
     <!-- ── Filter Bar ─────────────────────────────────────────────── -->
