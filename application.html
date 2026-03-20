@@ -249,15 +249,16 @@
     .role-card.ambassador .role-icon svg { stroke: var(--purple); }
 
     .role-type {
-      font-size: .7rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase;
-      margin-bottom: .5rem;
+      font-size: .68rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase;
+      margin-bottom: .3rem;
     }
     .role-card.researcher .role-type { color: var(--accent); }
     .role-card.ambassador .role-type { color: var(--purple); }
 
     .role-card h3 {
       font-family: var(--serif);
-      font-size: 1.65rem; color: var(--blue); margin-bottom: .75rem; line-height: 1.2;
+      font-size: 1.55rem; color: var(--blue); margin-bottom: .65rem; line-height: 1.15;
+      display: flex; align-items: center; gap: .4rem;
     }
     .role-card-desc { font-size: .925rem; line-height: 1.75; color: var(--muted); }
 
@@ -519,6 +520,55 @@
     .footer-bottom-links a:hover { color: rgba(255,255,255,0.7); }
     @media (max-width: 1100px) { .footer-inner { grid-template-columns: 1fr 1fr; } }
     @media (max-width: 480px) { .footer-inner { grid-template-columns: 1fr; } }
+
+    /* ── TEXT SWITCHING ─────────────────────────────────────── */
+    .m-hide { display: block; }
+    .m-show { display: none; }
+    span.m-hide { display: inline; }
+    span.m-show { display: none; }
+    @media (max-width: 1100px) {
+      .m-hide { display: none; }
+      .m-show { display: block; }
+      span.m-hide { display: none; }
+      span.m-show { display: inline; }
+    }
+
+    /* ── MOBILE FIXES ───────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      html { font-size: 16px; }
+      .nav-logo-sub { display: none; }
+      /* Hero */
+      .apply-hero { padding: 5.5rem 1.25rem 4rem; }
+      .apply-hero h1 { font-size: clamp(2rem, 9vw, 3rem); }
+      .hero-badges { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+      /* Roles grid already 1 col at 900px — tighten padding */
+      .role-card { padding: 1.5rem 1.25rem; }
+      /* Application form layout */
+      .apply-layout { grid-template-columns: 1fr; }
+      .apply-info { display: none; }
+      /* Role cards — show body on mobile but condensed */
+      .role-card-body { display: block; padding: 1rem 1.25rem 1.5rem; }
+      .role-card { padding: 0; }
+      .role-card-top { padding: 1.5rem 1.25rem 1rem; border-bottom: 1px solid var(--border); }
+      .role-commitment { display: none; }
+      /* Hide "What You Gain" on mobile */
+      .role-perks-section { display: block; margin-top: 1.5rem; }
+      .role-perks li:nth-child(n+4) { display: none; }
+      /* Show only first 2 responsibility items */
+      .role-list li:nth-child(n+3) { display: none; }
+      /* Tighten spacing */
+      .role-responsibilities { margin-bottom: 0; }
+      .role-responsibilities-title { font-size: .65rem; margin-bottom: .6rem; }
+      /* Footer */
+      .footer-col { display: none; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+      .footer-bottom-links { flex-wrap: wrap; gap: 0.75rem 1.25rem; }
+    }
+    @media (max-width: 670px) {
+      html { font-size: 15px; }
+      .apply-hero { padding: 4.5rem 1rem 3rem; }
+    }
   </style>
 </head>
 
@@ -565,7 +615,8 @@
       <div class="hero-inner">
         <p class="hero-eyebrow">Join WYC</p>
         <h1>Apply to the<br>World Youth<br>Council</h1>
-        <p>We are looking for motivated young researchers and emerging leaders who want to shape global policy through rigorous, evidence-based work. Applications are now open.</p>
+        <p class="m-hide">We are looking for motivated young researchers and emerging leaders who want to shape global policy through rigorous, evidence-based work. Applications are now open.</p>
+        <p class="m-show">Young researchers and leaders wanted. Applications open.</p>
         <div class="hero-badges">
           <span class="hero-badge"><span class="hero-badge-dot blue"></span>Researcher — Open</span>
           <span class="hero-badge"><span class="hero-badge-dot purple"></span>National Ambassador — Open</span>
@@ -593,7 +644,8 @@
               </div>
               <div class="role-type">Research Role</div>
               <h3>Researcher</h3>
-              <p class="role-card-desc">Researchers are the analytical core of WYC. Working within a national team, you conduct policy research, contribute to publications, and engage with an international network of peers on topics of global significance.</p>
+              <p class="role-card-desc m-hide">Researchers are the analytical core of WYC. You conduct policy research within a national team, contribute to publications, and engage with an international network of peers.</p>
+              <p class="role-card-desc m-show">Researchers are the analytical core of WYC. You conduct policy research, contribute to publications, and engage with an international network of peers.</p>
             </div>
             <div class="role-card-body">
               <div class="role-responsibilities">
@@ -606,6 +658,7 @@
                   <li>Represent WYC's research standards in all written and public work</li>
                 </ul>
               </div>
+              <div class="role-perks-section">
               <div class="role-responsibilities-title" style="margin-bottom:1rem;">What You Gain</div>
               <ul class="role-perks">
                 <li>
@@ -618,13 +671,14 @@
                 </li>
                 <li>
                   <span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
-                  Mentorship from senior researchers and academics
+                  WYC Research Certificate upon successful completion
                 </li>
                 <li>
                   <span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
-                  Official WYC membership certificate and digital profile
+                  Mentorship from senior researchers and academics
                 </li>
               </ul>
+              </div>
               <div class="role-commitment">
                 <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
                 <span><strong style="color:var(--blue);">Time commitment:</strong> Approx. 4–6 hours per week. Fully remote and flexible around your studies or work schedule.</span>
@@ -635,12 +689,13 @@
           <!-- Ambassador Card -->
           <div class="role-card ambassador reveal reveal-delay-1">
             <div class="role-card-top">
-              <div class="role-icon">
-                <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              <div class="role-icon" style="font-size:1.6rem; font-weight:700; color:#7C3AED; font-family:'DM Sans',sans-serif;">
+                Ψ
               </div>
               <div class="role-type">Leadership Role</div>
-              <h3>National Ambassador</h3>
-              <p class="role-card-desc">Ambassadors are the national representatives of WYC. You build and lead your country's research team, coordinate research activities, and serve as the primary liaison between your national chapter and the global WYC leadership.</p>
+              <h3>National Ambassador <span style="font-family:'DM Serif Display',serif; font-style:normal; font-size:1.55rem; color:var(--blue);">Ψ</span></h3>
+              <p class="role-card-desc m-hide">Ambassadors are WYC's national representatives. You build and lead your country's research team, coordinate research activities, and serve as the primary liaison to the global WYC leadership.</p>
+              <p class="role-card-desc m-show">Ambassadors are WYC's national representatives. You build and lead your country's research team and liaise with the global WYC leadership.</p>
             </div>
             <div class="role-card-body">
               <div class="role-responsibilities">
@@ -654,6 +709,7 @@
                   <li>Support researchers in their development and ensure team cohesion</li>
                 </ul>
               </div>
+              <div class="role-perks-section">
               <div class="role-responsibilities-title" style="margin-bottom:1rem;">What You Gain</div>
               <ul class="role-perks">
                 <li>
@@ -666,13 +722,14 @@
                 </li>
                 <li>
                   <span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
-                  Leadership development and organisational management experience
+                  WYC Leadership Certificate upon successful completion
                 </li>
                 <li>
                   <span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
-                  Official WYC Ambassador credential and country-level profile
+                  Leadership development and organisational management experience
                 </li>
               </ul>
+              </div>
               <div class="role-commitment">
                 <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
                 <span><strong style="color:var(--blue);">Time commitment:</strong> Approx. 8–10 hours per week. Requires stronger availability for team coordination and external representation.</span>
@@ -1062,4 +1119,5 @@
   </script>
 
 </body>
+</html>
 </html>
