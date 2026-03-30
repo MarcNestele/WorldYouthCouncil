@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Policy Briefs — World Youth Council</title>
+  <title>Policy Briefs — World Youth Initiative</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
@@ -250,6 +250,11 @@
       html { font-size: 15px; }
       .page-hero { padding: 4.5rem 1rem 3rem; }
     }
+  
+    /* Coming-soon footer links */
+    .footer-col a.coming-soon { opacity: 0.35; cursor: default; pointer-events: none; }
+    .footer-col a.coming-soon::after { content: ' ·'; }
+
   </style>
 </head>
 
@@ -257,22 +262,22 @@
 
   <!-- ── Navbar ─────────────────────────────────────────────────── -->
   <nav id="navbar">
-    <a href="index.html" class="nav-logo" aria-label="World Youth Council">
+    <a href="../" class="nav-logo" aria-label="World Youth Initiative">
       <div class="nav-logo-mark">
         <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3C9 7 9 17 12 21M12 3C15 7 15 17 12 21M3 12h18"/></svg>
       </div>
       <div>
-        <span class="nav-logo-text">World Youth Council</span>
+        <span class="nav-logo-text">World Youth Initiative</span>
         <span class="nav-logo-sub">Global Policy Initiative</span>
       </div>
     </a>
     <ul class="nav-links">
-      <li><a href="about.html">About</a></li>
-      <li><a href="research.html">Research</a></li>
-      <li><a href="team.html">Teams</a></li>
-      <li><a href="policy.html" class="nav-active">Policy Briefs</a></li>
+      <li><a href="../about/">About</a></li>
+      <li><a href="../research/">Research</a></li>
+      <li><a href="../team/">Teams</a></li>
+      <li><a href="../policy/" class="nav-active">Policy Briefs</a></li>
     </ul>
-    <a href="contact.html" class="nav-cta">Contact</a>
+    <a href="../contact/" class="nav-cta">Contact</a>
     <button class="hamburger" id="hamburger" aria-label="Open menu">
       <span></span><span></span><span></span>
     </button>
@@ -281,11 +286,11 @@
   <!-- Mobile Menu -->
   <div class="mobile-menu" id="mobileMenu" role="dialog">
     <button class="mobile-close" id="mobileClose" aria-label="Close">×</button>
-    <a href="about.html" class="mobile-link">About</a>
-    <a href="research.html" class="mobile-link">Research</a>
-    <a href="team.html" class="mobile-link">Teams</a>
-    <a href="policy.html" class="mobile-link">Policy Briefs</a>
-    <a href="contact.html" class="mobile-link">Contact</a>
+    <a href="../about/" class="mobile-link">About</a>
+    <a href="../research/" class="mobile-link">Research</a>
+    <a href="../team/" class="mobile-link">Teams</a>
+    <a href="../policy/" class="mobile-link">Policy Briefs</a>
+    <a href="../contact/" class="mobile-link">Contact</a>
   </div>
 
   <main>
@@ -462,9 +467,9 @@
         <div class="footer-brand">
           <div class="footer-logo">
             <div class="footer-logo-mark"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3C9 7 9 17 12 21M12 3C15 7 15 17 12 21M3 12h18"/></svg></div>
-            <span class="footer-brand-name">World Youth Council</span>
+            <span class="footer-brand-name">World Youth Initiative</span>
           </div>
-          <p class="footer-tagline">World Youth Council — A global youth-driven policy initiative connecting young researchers to shape tomorrow's decisions.</p>
+          <p class="footer-tagline">World Youth Initiative — A global youth-driven policy initiative connecting young researchers to shape tomorrow's decisions.</p>
           <div class="footer-socials">
             <div class="social-btn" aria-label="Twitter"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></div>
             <div class="social-btn" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></div>
@@ -474,21 +479,21 @@
         <div class="footer-col">
           <div class="footer-col-title">Organization</div>
           <ul>
-            <li><a href="about.html">About WYC</a></li>
-            <li><a href="#">How It Works</a></li>
-            <li><a href="#">Our Network</a></li>
-            <li><a href="#">Leadership</a></li>
-            <li><a href="#">Annual Report</a></li>
+            <li><a href="../about/">About WYC</a></li>
+            <li><a href="#" class="coming-soon">How It Works</a></li>
+            <li><a href="#" class="coming-soon">Our Network</a></li>
+            <li><a href="#" class="coming-soon">Leadership</a></li>
+            <li><a href="#" class="coming-soon">Annual Report</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <div class="footer-col-title">Research</div>
           <ul>
             <li><a href="#">Research Areas</a></li>
-            <li><a href="policy-briefs.html">Policy Briefs</a></li>
-            <li><a href="#">Working Papers</a></li>
-            <li><a href="#">Publications</a></li>
-            <li><a href="#">Events</a></li>
+            <li><a href="../policy/">Policy Briefs</a></li>
+            <li><a href="#" class="coming-soon">Working Papers</a></li>
+            <li><a href="#" class="coming-soon">Publications</a></li>
+            <li><a href="#" class="coming-soon">Events</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -497,13 +502,13 @@
             <li><a href="#">Join the Network</a></li>
             <li><a href="#">Become Ambassador</a></li>
             <li><a href="#">Research Teams</a></li>
-            <li><a href="#">Submit Research</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#" class="coming-soon">Submit Research</a></li>
+            <li><a href="../contact/">Contact</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <p class="footer-copy">© 2026 World Youth Council. All rights reserved.</p>
+        <p class="footer-copy">© 2026 World Youth Initiative. All rights reserved.</p>
         <ul class="footer-bottom-links">
           <li><a href="#">Privacy Policy</a></li>
           <li><a href="#">Terms of Use</a></li>
