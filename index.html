@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>World Youth Council — Global Youth Policy Initiative</title>
+  <title>World Youth Initiative — Global Youth Policy Initiative</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
@@ -544,27 +544,32 @@
       span.m-show { display: inline; }
     }
 
+  
+    /* Coming-soon footer links */
+    .footer-col a.coming-soon { opacity: 0.35; cursor: default; pointer-events: none; }
+    .footer-col a.coming-soon::after { content: ' ·'; }
+
   </style>
 </head>
 <body>
 <!-- NAVIGATION -->
 <nav id="navbar">
-  <a href="index.html" class="nav-logo" aria-label="World Youth Council">
+  <a href="index.html" class="nav-logo" aria-label="World Youth Initiative">
     <div class="nav-logo-mark">
       <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3C9 7 9 17 12 21M12 3C15 7 15 17 12 21M3 12h18"/></svg>
     </div>
     <div>
-      <span class="nav-logo-text">World Youth Council</span>
+      <span class="nav-logo-text">World Youth Initiative</span>
       <span class="nav-logo-sub">Global Policy Initiative</span>
     </div>
   </a>
   <ul class="nav-links">
-    <li><a href="about.html">About</a></li>
-    <li><a href="research.html">Research</a></li>
-    <li><a href="team.html">Teams</a></li>
-    <li><a href="policy.html">Policy Briefs</a></li>
+    <li><a href="about/">About</a></li>
+    <li><a href="research/">Research</a></li>
+    <li><a href="team/">Teams</a></li>
+    <li><a href="policy/">Policy Briefs</a></li>
   </ul>
-  <a href="contact.html" class="nav-cta">Contact</a>
+  <a href="contact/" class="nav-cta">Contact</a>
   <button class="hamburger" id="hamburger" aria-label="Open menu">
     <span></span><span></span><span></span>
   </button>
@@ -573,11 +578,11 @@
 <!-- Mobile Menu -->
 <div class="mobile-menu" id="mobileMenu" role="dialog">
   <button class="mobile-close" id="mobileClose" aria-label="Close">×</button>
-  <a href="about.html" class="mobile-link">About</a>
-  <a href="research.html" class="mobile-link">Research</a>
-  <a href="team.html" class="mobile-link">Teams</a>
-  <a href="policy.html" class="mobile-link">Policy Briefs</a>
-  <a href="contact.html" class="mobile-link">Contact</a>
+  <a href="about/" class="mobile-link">About</a>
+  <a href="research/" class="mobile-link">Research</a>
+  <a href="team/" class="mobile-link">Teams</a>
+  <a href="policy/" class="mobile-link">Policy Briefs</a>
+  <a href="contact/" class="mobile-link">Contact</a>
 </div>
 
 <!-- HERO -->
@@ -604,12 +609,12 @@
     <p class="hero-sub reveal reveal-delay-2">A global network of young researchers developing policy insights for the future.</p>
 
     <!-- ✏️ EDIT: Hero description — two-to-three sentence introduction shown below the subtitle -->
-    <p class="hero-desc reveal reveal-delay-3 m-hide">The World Youth Council connects ambitious young thinkers from around the world to analyze major policy challenges and develop evidence-based solutions.</p>
+    <p class="hero-desc reveal reveal-delay-3 m-hide">The World Youth Initiative connects ambitious young thinkers from around the world to analyze major policy challenges and develop evidence-based solutions.</p>
     <p class="hero-desc reveal reveal-delay-3 m-show">Young researchers. Global policy. Real impact.</p>
 
     <div class="btn-group reveal reveal-delay-4">
-      <a href="application.html" class="btn-primary">Join the Network <svg class="btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-      <a href=research.html class="btn-secondary">Explore Research <svg class="btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a href="application/" class="btn-primary">Join the Network <svg class="btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a href="research/" class="btn-secondary">Explore Research <svg class="btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
     </div>
   </div>
   <!-- ✏️ EDIT: Hero stats — replace placeholder values with real figures once available -->
@@ -628,7 +633,7 @@
         <h2 class="reveal reveal-delay-1">Rigorous analysis.<br/>Global perspectives.</h2>
 
         <!-- ✏️ EDIT: About paragraph 1 — introductory paragraph, 2–3 sentences, describes what WYC is -->
-        <p class="about-text reveal reveal-delay-2 m-hide">The World Youth Council is a youth-led global policy initiative bringing together talented students and young researchers from different countries.</p>
+        <p class="about-text reveal reveal-delay-2 m-hide">The World Youth Initiative is a youth-led global policy initiative bringing together talented students and young researchers from different countries.</p>
         <p class="about-text reveal reveal-delay-2 m-show">A youth-led policy initiative connecting researchers worldwide.</p>
 
         <!-- ✏️ EDIT: About paragraph 2 — mission statement paragraph, 2–3 sentences -->
@@ -652,7 +657,7 @@
             <div class="pillar-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
             <div class="pillar-name">Values</div>
             <!-- ✏️ EDIT: Values pillar description — one sentence -->
-            <div class="pillar-desc">Intellectual independence, analytical rigor, and international collaboration.</div>
+            <div class="pillar-desc">Intellectual independence, analytical rigor, international collaboration, and youth empowerment.</div>
           </div>
         </div>
       </div>
@@ -849,7 +854,7 @@
           <li>Access to WYC's network and events</li>
         </ul>
         <div style="display:flex; align-items:center; flex-wrap:wrap; gap:0.5rem;">
-          <a href="application.html" class="btn-apply researcher-btn">
+          <a href="application/" class="btn-apply researcher-btn">
             <span class="m-hide">Apply as Researcher</span><span class="m-show">Apply →</span>
             <svg class="m-hide" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
@@ -872,7 +877,7 @@
           <li>Direct access to the global WYC leadership board</li>
         </ul>
         <div style="display:flex; align-items:center; flex-wrap:wrap; gap:0.5rem;">
-          <a href="application.html" class="btn-apply ambassador-btn">
+          <a href="application/" class="btn-apply ambassador-btn">
             <span class="m-hide">Apply as Ambassador Ψ</span><span class="m-show">Apply →</span>
             <svg class="m-hide" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
@@ -913,7 +918,7 @@
         <!-- ✏️ EDIT: Brief card 1 — placeholder title and abstract -->
         <p style="font-size:0.85rem; color:var(--muted); line-height:1.6;">An analysis of current funding gaps in international climate finance and pathways for more equitable distribution.</p>
         <div class="brief-card-meta">
-          <span>Q2 2025</span>
+          <span>Q2 2026</span>
           <span>WYC Research Team</span>
         </div>
       </div>
@@ -924,7 +929,7 @@
         <!-- ✏️ EDIT: Brief card 2 — placeholder title and abstract -->
         <p style="font-size:0.85rem; color:var(--muted); line-height:1.6;">Evaluating existing AI regulatory models and proposing adaptive governance frameworks suited to developing nations.</p>
         <div class="brief-card-meta">
-          <span>Q3 2025</span>
+          <span>Q3 2026</span>
           <span>WYC Research Team</span>
         </div>
       </div>
@@ -935,7 +940,7 @@
         <!-- ✏️ EDIT: Brief card 3 — placeholder title and abstract -->
         <p style="font-size:0.85rem; color:var(--muted); line-height:1.6;">Examining structural drivers of youth unemployment and policy levers to build more inclusive labour markets.</p>
         <div class="brief-card-meta">
-          <span>Q3 2025</span>
+          <span>Q3 2026</span>
           <span>WYC Research Team</span>
         </div>
       </div>
@@ -1000,7 +1005,7 @@
         <div class="divider reveal reveal-delay-1"></div>
         <h2 class="reveal reveal-delay-1">Connecting<br/>young minds<br/>worldwide.</h2>
         <!-- ✏️ EDIT: Network section lead — one to two sentences on the global community -->
-        <p class="section-lead reveal reveal-delay-2 m-hide">The World Youth Council brings together motivated young people from across continents to collaborate on policy research and exchange perspectives.</p>
+        <p class="section-lead reveal reveal-delay-2 m-hide">The World Youth Initiative brings together motivated young people from across continents to collaborate on policy research and exchange perspectives.</p>
         <p class="section-lead reveal reveal-delay-2 m-show">Young people from every continent. One shared mission.</p>
         <div class="region-list reveal reveal-delay-2">
           <span class="region-pill">Africa</span>
@@ -1011,7 +1016,7 @@
           <span class="region-pill">Central Asia</span>
         </div>
         <div class="m-show" style="margin-top: 2rem;">
-          <a href="about.html" style="display:inline-flex; align-items:center; gap:0.5rem; font-size:0.78rem; font-weight:600; letter-spacing:0.04em; color:white; background:var(--navy); padding:0.6rem 1.25rem; border-radius:4px; text-decoration:none;">Browse <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <a href="about/" style="display:inline-flex; align-items:center; gap:0.5rem; font-size:0.78rem; font-weight:600; letter-spacing:0.04em; color:white; background:var(--navy); padding:0.6rem 1.25rem; border-radius:4px; text-decoration:none;">Browse <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         </div>
       </div>
     </div>
@@ -1026,7 +1031,7 @@
       <div class="divider reveal reveal-delay-1" style="margin: 0 auto 2rem;"></div>
       <h2 class="reveal reveal-delay-1">Shape the policies<br/>of tomorrow.</h2>
       <!-- ✏️ EDIT: Join section lead — one to two sentences inviting the reader to get involved -->
-      <p class="section-lead reveal reveal-delay-2 m-hide">Whether you're a researcher, a student, or a future leader — there's a place for you in the World Youth Council.</p>
+      <p class="section-lead reveal reveal-delay-2 m-hide">Whether you're a researcher, a student, or a future leader — there's a place for you in the World Youth Initiative.</p>
       <p class="section-lead reveal reveal-delay-2 m-show">Researcher, student, or future leader — join us.</p>
     </div>
     <div class="join-cards">
@@ -1048,12 +1053,12 @@
         <div class="join-card-icon"><svg viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></div>
         <h3>Contribute Research</h3>
         <!-- ✏️ EDIT: Join card — Contribute Research description -->
-        <p class="m-hide">Publish analytical work and policy ideas through WYC's platform. Reach a global audience of policymakers, academics, and fellow researchers.</p>
-        <p class="m-show">Publish your research. Reach a global audience.</p>
+        <p class="m-hide">Publish analytical work and policy ideas through WYC's platform. Reach a global audience of policymakers, academics, and fellow researchers. <a href="contact/" style="color:var(--accent);text-decoration:none;">Get in touch to submit.</a></p>
+        <p class="m-show">Publish your research. <a href="contact/" style="color:var(--accent);text-decoration:none;">Contact us to submit.</a></p>
       </div>
     </div>
     <div class="join-cta reveal">
-      <a href="application.html" class="btn-large">Apply Now <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a href="application/" class="btn-large">Apply Now <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       <span class="join-note">Applications reviewed on a rolling basis · Open to all nationalities</span>
     </div>
   </div>
@@ -1066,10 +1071,10 @@
       <div class="footer-brand">
         <div class="footer-logo">
           <div class="footer-logo-mark"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3C9 7 9 17 12 21M12 3C15 7 15 17 12 21M3 12h18"/></svg></div>
-          <span class="footer-brand-name">World Youth Council</span>
+          <span class="footer-brand-name">World Youth Initiative</span>
         </div>
         <!-- ✏️ EDIT: Footer tagline — one sentence brand description -->
-        <p class="footer-tagline m-hide">World Youth Council — A global youth-driven policy initiative connecting young researchers to shape tomorrow's decisions.</p>
+        <p class="footer-tagline m-hide">World Youth Initiative — A global youth-driven policy initiative connecting young researchers to shape tomorrow's decisions.</p>
         <p class="footer-tagline m-show">Youth-driven policy research. Global reach.</p>
         <div class="footer-socials">
           <div class="social-btn" aria-label="Twitter"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></div>
@@ -1080,37 +1085,36 @@
       <div class="footer-col">
         <div class="footer-col-title">Organization</div>
         <ul>
-          <li><a href="about.html>About WYC</a></li>
+          <li><a href="about/">About WYI</a></li>
           <li><a href="#network">Our Network</a></li>
-          <li><a href="#">Leadership</a></li>
-          <li><a href="#">Annual Report</a></li>
+          <li><a href="#" class="coming-soon">Leadership</a></li>
+          <li><a href="#" class="coming-soon">Annual Report</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <div class="footer-col-title">Research</div>
         <ul>
-          <li><a href=research.html>Research Areas</a></li>
-          <li><a href=policy.html>Publications</a></li>
-          <li><a href=policy.html>Policy Briefs</a></li>
-          <li><a href="#">Events</a></li>
+          <li><a href="research/">Research Areas</a></li>
+          <li><a href="policy/">Policy Briefs</a></li>
+          <li><a href="#" class="coming-soon">Events</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <div class="footer-col-title">Get Involved</div>
         <ul>
-          <li><a href=application.html>Join the Network</a></li>
-          <li><a href=team.html>Become Ambassador</a></li>
-          <li><a href=team.html>Research Teams</a></li>
-          <li><a href=contact.html>Contact</a></li>
+          <li><a href="application/">Join the Network</a></li>
+          <li><a href="team/">Become Ambassador</a></li>
+          <li><a href="team/">Research Teams</a></li>
+          <li><a href="contact/">Contact</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p class="footer-copy">© 2026 World Youth Council. All rights reserved.</p>
+      <p class="footer-copy">© 2026 World Youth Initiative. All rights reserved.</p>
       <ul class="footer-bottom-links">
-        <li><a href=privacy.html>Privacy Policy</a></li>
-        <li><a href=terms.html>Terms of Use</a></li>
-        <li><a href=cookies.html>Cookie Policy</a></li>
+        <li><a href="privacy/">Privacy Policy</a></li>
+        <li><a href="terms/">Terms of Use</a></li>
+        <li><a href="cookies/">Cookie Policy</a></li>
       </ul>
     </div>
   </div>
